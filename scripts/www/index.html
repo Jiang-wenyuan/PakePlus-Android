@@ -1,0 +1,2182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>逻辑填空词卡 · 高频成语实词练习</title>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@600;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap">
+<style>
+/* ============ 设计令牌 ============ */
+:root{
+  --paper:#F4EFE1;
+  --paper-2:#EAE2CE;
+  --card:#FFFCF2;
+  --ink:#332F27;
+  --ink-2:#6E6757;
+  --ink-3:#9B927C;
+  --line:#D8CFB8;
+  --grid:rgba(122,110,84,.09);
+  --red:#BE4632;
+  --red-soft:#F2DBD3;
+  --green:#3F7A56;
+  --green-soft:#DFEADF;
+  --blue:#35618F;
+  --blue-soft:#DEE7F0;
+  --amber:#A8781D;
+  --amber-soft:#F2E6CC;
+  --shadow:0 12px 34px rgba(61,50,32,.13);
+  --radius:18px;
+  --serif:'Noto Serif SC',serif;
+  --sans:'Noto Sans SC',-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--sans);
+  color:var(--ink);
+  background:
+    radial-gradient(1100px 560px at 82% -8%, rgba(190,70,50,.055), transparent 60%),
+    radial-gradient(900px 520px at -5% 8%, rgba(53,97,143,.07), transparent 55%),
+    var(--paper);
+  min-height:100vh;
+  line-height:1.6;
+}
+.bg-grid{
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size:26px 26px;
+}
+a{color:inherit}
+button{font-family:inherit}
+::selection{background:var(--red-soft)}
+
+/* ============ 顶栏 ============ */
+.app-header{
+  position:sticky;top:0;z-index:30;
+  background:color-mix(in srgb, var(--paper) 90%, transparent);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  max-width:1080px;margin:0 auto;padding:14px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+}
+.brand-title{
+  font-family:var(--serif);font-size:22px;font-weight:900;letter-spacing:.5px;
+}
+.brand-title .accent{color:var(--red)}
+.brand-sub{font-size:12px;color:var(--ink-2);margin-top:2px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tab{
+  text-decoration:none;color:var(--ink-2);font-size:14px;font-weight:500;
+  padding:8px 14px;border-radius:999px;border:1px solid transparent;transition:.15s;
+}
+.tab:hover{color:var(--ink);background:var(--paper-2)}
+.tab.active{color:#fff;background:var(--ink)}
+
+/* ============ 主视图 ============ */
+.view{
+  position:relative;z-index:1;max-width:1080px;margin:0 auto;
+  padding:26px 20px 70px;
+}
+.view-head{margin-bottom:18px}
+.view-title{font-family:var(--serif);font-size:26px;font-weight:900}
+.view-sub{color:var(--ink-2);font-size:14px;margin-top:4px}
+
+/* ============ 通用组件 ============ */
+.btn{
+  display:inline-flex;align-items:center;gap:8px;justify-content:center;
+  border:1px solid var(--line);background:var(--card);color:var(--ink);
+  padding:10px 18px;border-radius:12px;font-size:14px;font-weight:500;
+  cursor:pointer;transition:.15s;white-space:nowrap;
+}
+.btn:hover{border-color:var(--ink-3);box-shadow:var(--shadow)}
+.btn:disabled{opacity:.5;cursor:not-allowed;box-shadow:none}
+.btn-ink{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn-ink:hover{background:#241f19}
+.btn-red{background:var(--red);color:#fff;border-color:var(--red)}
+.btn-red:hover{background:#a63a28}
+.btn-green{background:var(--green);color:#fff;border-color:var(--green)}
+.btn-green:hover{background:#356646}
+.btn-ghost{background:transparent;border-color:transparent;color:var(--ink-2)}
+.btn-ghost:hover{color:var(--ink);box-shadow:none}
+.btn-sm{padding:7px 13px;font-size:13px;border-radius:10px}
+
+.select{
+  appearance:none;-webkit-appearance:none;
+  font-family:inherit;font-size:14px;color:var(--ink);
+  background-color:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:10px 36px 10px 14px;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236E6757' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><path d='M6 9l6 6 6-6'/></svg>");
+  background-repeat:no-repeat;background-position:right 13px center;
+  cursor:pointer;max-width:100%;
+}
+.select:focus{outline:2px solid var(--blue-soft)}
+.input{
+  font-family:inherit;font-size:14px;color:var(--ink);
+  background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:10px 14px;min-width:200px;max-width:100%;
+}
+.input:focus{outline:2px solid var(--blue-soft)}
+
+.toolbar{
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  background:color-mix(in srgb, var(--card) 72%, transparent);
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:12px 14px;margin-bottom:16px;
+}
+.field{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-2);font-weight:500}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card)}
+.seg-btn{
+  border:0;background:transparent;padding:9px 14px;font-size:13px;font-weight:500;
+  color:var(--ink-2);cursor:pointer;font-family:inherit;
+}
+.seg-btn.active{background:var(--ink);color:#fff}
+.check{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--ink-2);font-weight:500;cursor:pointer}
+.check input{accent-color:var(--red);width:15px;height:15px;cursor:pointer}
+.field-tip{font-size:13px;color:var(--blue);background:var(--blue-soft);padding:7px 12px;border-radius:10px}
+
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+.chip{
+  display:inline-block;font-size:12px;font-weight:500;color:var(--blue);
+  background:var(--blue-soft);border-radius:999px;padding:4px 10px;
+}
+.progress-wrap{display:flex;align-items:center;gap:12px;margin:14px 2px;font-size:13px;color:var(--ink-2)}
+.progress-track{flex:1;height:8px;border-radius:99px;background:var(--paper-2);overflow:hidden}
+.progress-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--green),#6aa67f);transition:width .3s}
+
+/* ============ 闪卡 ============ */
+.flash-stage{max-width:540px;margin:6px auto 0;cursor:pointer}
+.flip-scene{perspective:1600px}
+.flip-inner{
+  position:relative;width:100%;height:min(54vh,420px);min-height:320px;
+  transform-style:preserve-3d;transition:transform .6s cubic-bezier(.25,.8,.3,1);
+}
+.flip-inner.flipped{transform:rotateY(180deg)}
+.flip-face{
+  position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  border-radius:20px;background:var(--card);border:1px solid var(--line);
+  box-shadow:var(--shadow);display:flex;flex-direction:column;
+  padding:24px 26px;overflow:hidden;
+}
+.flip-back{transform:rotateY(180deg)}
+.card-paper{
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size:22px 22px;
+}
+.flip-face::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:5px;
+  background:linear-gradient(var(--red),var(--amber));
+}
+.fc-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.fc-num{font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.fc-mid{
+  flex:1;display:flex;align-items:center;justify-content:center;text-align:center;
+  padding:16px 4px;
+}
+.fc-word{
+  font-family:var(--serif);font-weight:900;font-size:clamp(40px,9vw,72px);
+  line-height:1.3;letter-spacing:2px;word-break:break-word;
+}
+.fc-mean{
+  font-size:clamp(19px,4.6vw,26px);line-height:1.9;color:var(--ink);
+  text-align:center;word-break:break-word;
+}
+.fc-mean .tilde{color:var(--red);font-weight:700}
+.fc-label{font-family:var(--serif);font-size:13px;font-weight:700;color:var(--red);letter-spacing:3px;margin-bottom:6px}
+.fc-label.blue{color:var(--blue)}
+.fc-hint{font-size:12px;color:var(--ink-3);text-align:center;padding-top:12px}
+.fc-group{font-size:12px;color:var(--ink-2);text-align:center;padding-top:10px}
+
+.flash-actions{
+  display:flex;align-items:center;justify-content:center;gap:12px;margin-top:22px;flex-wrap:wrap;
+}
+.flash-actions .btn{min-width:112px}
+.flash-complete{max-width:540px;margin:10px auto 0;padding:26px;text-align:center}
+.fc-complete-title{font-family:var(--serif);font-size:24px;font-weight:900;margin-bottom:8px}
+.fc-complete-stats{display:flex;justify-content:center;gap:26px;margin:18px 0;flex-wrap:wrap}
+.fc-stat{text-align:center}
+.fc-stat b{display:block;font-family:var(--serif);font-size:30px;font-weight:900}
+.fc-stat.g b{color:var(--green)}
+.fc-stat.r b{color:var(--red)}
+.fc-stat span{font-size:12px;color:var(--ink-2)}
+.fc-complete-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:14px}
+
+/* ============ 测验 ============ */
+.quiz-stage{max-width:640px;margin:0 auto}
+.quiz-progress{display:flex;align-items:center;gap:12px;margin:14px 2px;font-size:13px;color:var(--ink-2)}
+.quiz-stem{padding:22px 24px;margin-bottom:16px}
+.quiz-label{font-size:12px;color:var(--red);font-weight:700;letter-spacing:2px}
+.quiz-word{font-family:var(--serif);font-size:clamp(24px,5.6vw,38px);font-weight:900;margin-top:8px;line-height:1.5;word-break:break-word}
+.quiz-word .tilde{color:var(--red)}
+.quiz-options{display:flex;flex-direction:column;gap:10px;margin-bottom:18px}
+.quiz-opt{
+  display:flex;align-items:flex-start;gap:12px;text-align:left;width:100%;
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:14px 16px;font-size:15px;line-height:1.7;color:var(--ink);
+  cursor:pointer;font-family:inherit;transition:.15s;
+}
+.quiz-opt:hover{border-color:var(--ink-3);transform:translateY(-1px)}
+.quiz-opt .q-let{
+  flex:none;width:26px;height:26px;border-radius:8px;background:var(--paper-2);
+  display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--ink-2);
+}
+.quiz-opt.correct{border-color:var(--green);background:var(--green-soft)}
+.quiz-opt.correct .q-let{background:var(--green);color:#fff}
+.quiz-opt.wrong{border-color:var(--red);background:var(--red-soft)}
+.quiz-opt.wrong .q-let{background:var(--red);color:#fff}
+.quiz-opt.disabled{cursor:default;pointer-events:none}
+.quiz-opt .q-txt{flex:1;word-break:break-word}
+.quiz-footer{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.quiz-score{font-size:14px;color:var(--ink-2)}
+.quiz-score b{color:var(--ink)}
+.quiz-result{text-align:center;padding:30px 26px}
+.qr-title{font-family:var(--serif);font-size:26px;font-weight:900;margin-bottom:6px}
+.qr-score{font-family:var(--serif);font-size:46px;font-weight:900;color:var(--green);margin:10px 0 2px}
+.qr-sub{color:var(--ink-2);font-size:14px;margin-bottom:18px}
+.qr-wrong{text-align:left;background:var(--red-soft);border-radius:14px;padding:14px 16px;margin:16px 0}
+.qr-wrong h4{font-size:13px;color:var(--red);margin-bottom:8px}
+.qr-wrong .qr-w-item{display:flex;gap:10px;font-size:14px;padding:4px 0;border-bottom:1px dashed rgba(190,70,50,.2)}
+.qr-wrong .qr-w-item:last-child{border-bottom:0}
+.qr-w-item b{font-family:var(--serif);flex:none}
+.qr-w-item span{color:var(--ink-2)}
+.qr-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:16px}
+
+/* ============ 词库浏览 ============ */
+.bz-count{font-size:13px;color:var(--ink-2);margin-left:auto}
+.bz-groups{display:flex;flex-direction:column;gap:12px}
+.bz-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.bz-card summary{
+  list-style:none;cursor:pointer;padding:16px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+}
+.bz-card summary::-webkit-details-marker{display:none}
+.bz-card summary:hover{background:var(--paper-2)}
+.bz-name{font-family:var(--serif);font-size:17px;font-weight:900;flex:none}
+.bz-meta{font-size:12px;color:var(--ink-2)}
+.bz-bar{flex:1;min-width:90px;height:6px;border-radius:99px;background:var(--paper-2);overflow:hidden}
+.bz-bar i{display:block;height:100%;background:var(--green);border-radius:99px}
+.bz-caret{margin-left:auto;color:var(--ink-3);transition:transform .2s;flex:none}
+.bz-card[open] .bz-caret{transform:rotate(90deg)}
+.bz-items{border-top:1px dashed var(--line);padding:6px 18px 12px}
+.bz-item{
+  display:flex;align-items:flex-start;gap:12px;padding:9px 0;
+  border-bottom:1px dashed var(--line);
+}
+.bz-item:last-child{border-bottom:0}
+.bz-dot{flex:none;width:9px;height:9px;border-radius:50%;margin-top:9px;background:var(--ink-3)}
+.bz-dot.known{background:var(--green)}
+.bz-dot.unknown{background:var(--red)}
+.bz-w{font-family:var(--serif);font-weight:900;font-size:16px;flex:none;width:120px}
+.bz-m{font-size:14px;color:var(--ink-2);flex:1}
+.bz-empty{padding:30px;text-align:center;color:var(--ink-3);background:var(--card);border:1px dashed var(--line);border-radius:var(--radius)}
+
+/* ============ 错题本 ============ */
+.rv-tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.rv-tab{
+  border:1px solid var(--line);background:var(--card);color:var(--ink-2);
+  padding:8px 16px;border-radius:999px;font-size:14px;font-weight:500;cursor:pointer;
+}
+.rv-tab.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.rv-toolbar{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap;align-items:center}
+.rv-count{font-size:13px;color:var(--ink-2);margin-left:auto}
+.rv-list{display:flex;flex-direction:column;gap:8px}
+.rv-item{
+  display:flex;align-items:center;gap:14px;background:var(--card);
+  border:1px solid var(--line);border-radius:14px;padding:12px 16px;flex-wrap:wrap;
+}
+.rv-w{font-family:var(--serif);font-weight:900;font-size:17px;flex:none;width:120px}
+.rv-m{font-size:14px;color:var(--ink-2);flex:1;min-width:180px}
+.rv-group{font-size:12px;color:var(--ink-3)}
+.rv-act{display:flex;gap:6px}
+.rv-empty{padding:40px;text-align:center;color:var(--ink-3);background:var(--card);border:1px dashed var(--line);border-radius:var(--radius)}
+
+/* ============ 统计 ============ */
+.st-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-bottom:22px}
+.st-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;text-align:center;box-shadow:var(--shadow)}
+.st-num{font-family:var(--serif);font-size:34px;font-weight:900;line-height:1.2}
+.st-card.g .st-num{color:var(--green)}
+.st-card.r .st-num{color:var(--red)}
+.st-card.b .st-num{color:var(--blue)}
+.st-card.a .st-num{color:var(--amber)}
+.st-label{font-size:12px;color:var(--ink-2);margin-top:4px}
+.st-section{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);margin-bottom:16px}
+.st-section h3{font-family:var(--serif);font-size:16px;font-weight:900;margin-bottom:14px}
+.st-row{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.st-row:last-child{margin-bottom:0}
+.st-row .st-row-label{flex:none;width:90px;font-size:13px;color:var(--ink-2)}
+.st-row .progress-track{flex:1}
+.st-row .st-row-val{flex:none;width:64px;text-align:right;font-size:13px;font-weight:700;font-variant-numeric:tabular-nums}
+.st-desc{font-size:13px;color:var(--ink-2);line-height:1.8}
+
+/* ============ 页脚 ============ */
+.app-footer{
+  position:relative;z-index:1;max-width:1080px;margin:0 auto;
+  padding:8px 20px 34px;text-align:center;font-size:12px;color:var(--ink-3);
+}
+
+/* ============ 响应式 ============ */
+@media (max-width:768px){
+  .header-inner{padding:12px 14px}
+  .brand-title{font-size:19px}
+  .view{padding:18px 14px 60px}
+  .view-title{font-size:22px}
+  .bz-w,.rv-w{width:100px}
+  .flash-actions .btn{min-width:96px;padding:10px 12px}
+  .st-cards{grid-template-columns:repeat(2,1fr)}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+
+<header class="app-header">
+  <div class="header-inner">
+    <div class="brand">
+      <h1 class="brand-title">逻辑填空<span class="accent">·</span>词卡</h1>
+      <p class="brand-sub">高频成语与实词 · 释义练习</p>
+    </div>
+    <nav class="tabs" id="navTabs">
+      <a href="#/flash" data-nav="flash" class="tab">闪卡练习</a>
+      <a href="#/quiz" data-nav="quiz" class="tab">选择测验</a>
+      <a href="#/browse" data-nav="browse" class="tab">词库浏览</a>
+      <a href="#/review" data-nav="review" class="tab">错题本</a>
+      <a href="#/stats" data-nav="stats" class="tab">学习统计</a>
+    </nav>
+  </div>
+</header>
+
+<main class="view" id="view"></main>
+
+<footer class="app-footer">释义中的「~」表示该成语 / 词语本身 · 学习进度保存在本机浏览器</footer>
+
+<script>
+/* ============ 数据（来自《逻辑填空花生》笔记） ============ */
+const GROUPS = [
+{name:"中华文明·传统文化",items:[
+["源远流长","历史久远"],
+["连绵不绝","不间断（文明、风光、声音）"],
+["博大精深","思想、理论广博丰富"],
+["历久弥新","经历很久仍保持活力、不断更新"],
+["兼收并蓄","都能收留、都能包容保留"],
+["一脉相承","前后传承、内核一致（思想、理论、文化、作风、制度）"],
+["血脉相通","内在根基一体（人群）"],
+["薪火相传","代代传递、代代坚守"],
+["不绝如缕","要断不断、形势危急"],
+["陈陈相因","消极、守旧、照搬旧制，无发展"],
+["口耳相传","口说耳听"],
+["难以为继","传不下去（客观大环境）"],
+["后继无人","传不下去（人的原因）"],
+["继往开来","历史节点上的承接与开创"],
+["承上启下","时间节点、结构过渡"]
+]},
+{name:"改革创新",items:[
+["推陈出新","去糟粕、取精华，创造新的"],
+["吐故纳新","扬弃旧的，吸纳新的"],
+["革故鼎新","政治、制度上的大变革"],
+["弃旧图新","放弃错的，谋求新路"],
+["去芜存菁","去除坏的，保留好的"],
+["除旧布新","以新代旧（宏观层面）"],
+["激浊扬清","批判坏的，推广好的"],
+["去伪存真","去除假的，保留真的"]
+]},
+{name:"做法·构思创新",items:[
+["另辟蹊径","原有方法行不通，主动找新途径"],
+["标新立异","刻意做作，显示自己与众不同"],
+["与时俱进","贴合时代变化"],
+["剑走偏锋","手段激进、风险高"],
+["不拘一格","打破条条框框，做事灵活"],
+["别具一格","（风格）另有一种格调、风韵（文艺建筑）"],
+["空前绝后","极致独特、巅峰级成就"],
+["举世无双","稀有、顶尖（人、技艺、珠宝）"],
+["匠心独运","专业深耕后的巧妙设计"],
+["别出心裁","思路新颖、与众不同"],
+["异想天开","空想、离谱、脱离现实"],
+["独树一帜","形成独立流派（艺术、学术、行业）"],
+["自成一家","体系完整、造诣深厚"],
+["别开生面","创新形式、带来全新观感"],
+["不落窠臼","避开俗套，构思新颖"],
+["特立独行","形容人的性格、行事作风"]
+]},
+{name:"守旧不创新",items:[
+["墨守成规","死守既有规定"],
+["因循守旧","很中性的守旧"],
+["抱残守缺","守着残缺、过时、无用的东西"],
+["固步自封","自我封闭、安于现状（主观不想变）"],
+["食古不化","用于学问、知识、理论、古书古义"],
+["泥古不化","用于制度、方法、规制"]
+]},
+{name:"按规矩办事",items:[
+["按部就班","按照次序、步骤做事（不灵活）"],
+["循规蹈矩","守规矩、不越界（不敢、不创新）"],
+["照本宣科","照稿念"],
+["循序渐进","由浅入深、逐步发展"],
+["有条不紊","有条理、有次序、一点不乱"]
+]},
+{name:"处境困难",items:[
+["望而却步","客观很难、不敢前进"],
+["望而生畏","高大、敬佩、不好理解（敬畏的畏惧）"],
+["畏葸不前","胆小、不敢向前"],
+["停滞不前","停止发展、原地不动"],
+["举步维艰","难，但还能动"],
+["大海捞针","极难、几乎不可能"],
+["寸步难行","动不了"],
+["骑虎难下","中途停止、损失更大"],
+["进退维谷","前后都是坑"],
+["进退失据","决策、行事无依据"],
+["瞻前顾后","犹豫、害怕"],
+["踟蹰不前","短暂犹豫、原地徘徊"],
+["趑趄不前","有顾虑，强调主观畏缩"]
+]},
+{name:"形势危险",items:[
+["岌岌可危","形势极端危险、快要灭亡"],
+["危如累卵","形势极端危险（更形象）"],
+["命悬一线","有生命的危险"],
+["风雨飘摇","局势动荡、可能垮台"],
+["危在旦夕","危险很近（侧重时间）"],
+["迫在眉睫","急需出对策"],
+["刻不容缓","马上出对策"],
+["孤注一掷","拿出全部力量冒险一搏"],
+["铤而走险","做违规、危险之事"],
+["背水一战","身处绝境，只能拼死一搏"],
+["千钧一发","时间紧迫、关键时刻"],
+["首当其冲","最先受到攻击"]
+]},
+{name:"事物出现·发展·衰落",items:[
+["层出不穷","现象不断出现"],
+["风起云涌","声势大、很多人做一件事"],
+["方兴未艾","新事物发展正盛"],
+["雨后春笋","新事物数量多"],
+["横空出世","突然出现（宏大、磅礴、惊艳）"],
+["异军突起","新势力突然出现"],
+["应运而生","顺应时代、背景而产生"],
+["落地生根","扎根、稳定"],
+["高歌猛进","情绪高涨、大踏步向前"],
+["如火如荼","大规模活动气氛热烈"],
+["如日中天","发展到顶峰"],
+["势如破竹","节节顺利、毫无阻碍"],
+["突飞猛进","技术、能力、水平提升快"],
+["势不可挡","强大无法阻挡（客观、大势）"],
+["日臻完善","持续优化"],
+["枝繁叶茂","体系庞大、根基兴旺"],
+["日新月异","新气象（变化多）"],
+["与日俱增","数量、程度累加"],
+["愈演愈烈","越来越严重"],
+["一日千里","进步快（事业、技术速度快）"],
+["每况愈下","健康、收入、业绩、质量等下滑"],
+["日渐式微","没以前红火、影响力变小"],
+["江河日下","大局面一路衰败、大势不行"],
+["水涨船高","一方提升带动另一方同步增长"],
+["柳暗花明","绝境转机"],
+["峰回路转","事态曲折变化后出现转机"],
+["拨云见日","看清真相、解开迷雾"],
+["此消彼长","一方下降、另一方上升"],
+["波澜壮阔","声势浩大、规模雄伟（时代征程）"],
+["浩浩荡荡","人流、群体、潮流规模盛大"],
+["汹涌澎湃","声势浩大（感情、冲击力）"],
+["大气磅礴","格局宏大（作品、景观、布局）"],
+["气壮山河","气概宏伟（精神、英雄壮举）"]
+]},
+{name:"竞争比较",items:[
+["相形见绌","不如人"],
+["出类拔萃","比人好"],
+["无与伦比","完美、极致"],
+["先发制人","先下手采取行动"],
+["百舸争流","竞争激烈"],
+["千帆竞发","竞争激烈；事物蓬勃发展、气势磅礴"],
+["争先恐后","不甘落后"],
+["大浪淘沙","竞争、筛选、淘汰差的"],
+["无出其右","无人能敌"],
+["脱颖而出","有才能、超出同类"],
+["崭露头角","展示能力（刚刚开始）"],
+["鹤立鸡群","有才能、超出众人"],
+["一枝独秀","同类事物中最优秀（唯一）"],
+["独占鳌头","第一"],
+["望其项背","赶得上（一般搭配「难以」）"],
+["望尘莫及","赶不上"],
+["相提并论","差距大的两个比较（地位）"],
+["同日而语","时间上相提并论"],
+["等量齐观","对有差别的事物同等看待（A和B）"],
+["一概而论","一个标准（一类事物情况多样）"],
+["一视同仁","对人/物同样看待"],
+["不偏不倚","公平、位置中正"]
+]},
+{name:"能力不足",items:[
+["力有未逮","做不到"],
+["力不从心","想做做不到"],
+["爱莫能助","想帮没能力"],
+["鞭长莫及","太远力量达不到"],
+["望洋兴叹","渺小做不到"],
+["杯水车薪","力量太小无法解决问题"],
+["回天乏术","局势或病情严重"],
+["捉襟见肘","资源有限、缺口明显"],
+["顾此失彼","问题太多、考虑不周全"],
+["左支右绌","能力有限、应付不过来"],
+["独木难支","一个人不行（多方）"],
+["应接不暇","太忙、应付不过来"],
+["自顾不暇","连自己都照顾不过来、没余力管别人"],
+["分身乏术","没有多余精力"]
+]},
+{name:"印象·效果·学习",items:[
+["浮光掠影","结果没记住（与「深」相对）"],
+["走马观花","过程不深入"],
+["蜻蜓点水","做事不深入（工作、调研、整改、执法）"],
+["浅尝辄止","不做深入研究（学习、理论）"],
+["囫囵吞枣","学得不透"],
+["不求甚解","不想学透（学习态度）"],
+["举一反三","单一推同类"],
+["融会贯通","融合各种知识、透彻理解"],
+["触类旁通","一类推多类"]
+]},
+{name:"搭档配合",items:[
+["相辅相成","相互配合、缺一不可"],
+["相得益彰","相互配合、彰显优势"],
+["锦上添花","好上添好（主体+附加）"],
+["珠联璧合","强强联合（人、物均可）"],
+["互为表里","一体两面、内外互相依存"],
+["交相辉映","互相衬托、彼此增色（灯火、建筑、文化、山水）"],
+["相映成趣","趣味、意趣相衬"],
+["双峰并峙","水平顶尖、地位相当"]
+]},
+{name:"工作开展顺序",items:[
+["并行不悖","能共存、不打架（看似矛盾）"],
+["齐头并进","同步推进"],
+["双管齐下","两个办法一起用"],
+["并驾齐驱","实力相当"]
+]},
+{name:"错误抉择和方向",items:[
+["本末倒置","主次颠倒顺序"],
+["喧宾夺主","配角抢戏（次要挤占主体）"],
+["舍本逐末","主动舍弃根本"],
+["因小失大","丢西瓜捡芝麻"],
+["因噎废食","出了事直接放弃"],
+["非此即彼","只能二选一"],
+["背道而驰","两个主体、背离正道"],
+["南辕北辙","单一主体、行动与目的相反"],
+["分道扬镳","两个主体、各走各的"],
+["缘木求鱼","方法错误、必然达不到目的"]
+]},
+{name:"错误做法·寓言故事",items:[
+["拔苗助长","违背客观规律、急于求成"],
+["越俎代庖","狗拿耗子，管自己职责外的事"],
+["削足适履","迎合、迁就、生搬硬套"],
+["闭门造车","只凭主观"],
+["刻舟求剑","固守老方法（老方法解决不了新问题）"],
+["守株待兔","死守狭隘经验、不变通；不劳而获"],
+["掩耳盗铃","自己骗自己（掩盖客观事实）"],
+["邯郸学步","机械模仿（失去自我）"],
+["东施效颦","盲目模仿、适得其反（效果不好）"],
+["与虎谋皮","利益冲突、不可能达成目标"]
+]},
+{name:"教育·影响·批评",items:[
+["潜移默化","品行不知不觉受到变化（结果）"],
+["耳濡目染","耳闻目睹"],
+["如沐春风","教化、交谈使人舒服"],
+["润物无声","方式温和"],
+["成风化人","培育社会风气、教化大众"],
+["醍醐灌顶","之前不理解、现在理解（个人）"],
+["振聋发聩","言论震撼世人、唤醒麻木众人（大众）"],
+["耳提面命","恳切、严厉、当面教诲"],
+["苦口婆心","反复耐心地劝"],
+["循循善诱","有步骤地引导"],
+["诲人不倦","育人不疲倦"],
+["春风化雨","教化、熏陶、方式温和"],
+["和风细雨","劝说批评、态度温和"]
+]},
+{name:"工作学习状态",items:[
+["如履薄冰","小心谨慎"],
+["兢兢业业","小心谨慎、不敢懈怠"],
+["一丝不苟","办事认真、一点不马虎"],
+["夜以继日","十分勤奋、勤恳、忙碌"],
+["焚膏继晷","用功读书或努力工作"],
+["夙兴夜寐","早起晚睡、勤奋辛劳"],
+["目不窥园","学习专心致志、十分刻苦"],
+["殚精竭虑","用尽精力和心思"],
+["呕心沥血","费尽心思"],
+["苦心孤诣","尽力用心钻研、达到别人达不到的地步"],
+["废寝忘食","对某事专心致志"],
+["皓首穷经","钻研经籍直到人老头白（长期钻研）"],
+["心无旁骛","心思集中、专心致志"],
+["乐此不疲","对某件事特别爱好而沉浸其中"],
+["挖空心思","想方设法、费尽心机（贬义）"],
+["千锤百炼","反复锤炼、使技艺或诗文达到极高水平"],
+["持之以恒","恒心长久地坚持下去"],
+["精益求精","追求卓越、不断进步"]
+]},
+{name:"辛苦劳累",items:[
+["栉风沐雨","人辛苦地四处奔波"],
+["风餐露宿","旅途中的辛苦劳累"],
+["筚路蓝缕","创业（事情发展初期）的艰难辛苦"],
+["披星戴月","早出晚归、连夜赶路"],
+["摩顶放踵","不辞劳苦、不顾身体"],
+["胼手胝足","手脚生茧、劳动十分辛勤"],
+["孜孜不倦","勤奋、不知疲倦"],
+["孜孜以求","不知疲倦地探求"]
+]},
+{name:"正确做法",items:[
+["条分缕析","分析得有条理、很细致"],
+["抽丝剥茧","分析事物极为细致、一步一步有层次"],
+["深入浅出","内容深刻、语言浅显易懂"],
+["纲举目张","抓住主要环节、带动一切"],
+["提纲挈领","抓住关键或核心、简洁明了地概述"],
+["以一持万","抓住关键环节、控制影响整个局面"],
+["量力而行","根据自身实际能力决定行动范围"],
+["厚积薄发","积累丰富的学问而不轻易表现"],
+["脚踏实地","做事踏实、认真、稳重"],
+["返璞归真","去掉外在修饰、回到本真朴素"],
+["行稳致远","稳扎稳打才能走得长远"],
+["博采众长","广泛搜集采纳、从多方面吸取长处"],
+["见贤思齐","见到有才德的人就想和他齐平"],
+["当仁不让","该做的事勇于承担、不推诿（侧重情理）"],
+["义不容辞","道义上不容推辞（侧重良心、道义）"],
+["责无旁贷","自己应尽的责任、不能推给别人（侧重责任）"]
+]},
+{name:"错误做法",items:[
+["过犹不及","做事过头和不够一样、要有分寸"],
+["矫枉过正","纠正错误过头"],
+["于事无补","补救无效、对解决问题无帮助"],
+["作茧自缚","自己束缚自己、陷入困境"],
+["扬汤止沸","治标难治本、暂压问题"],
+["隔靴搔痒","碰不到要害、不解根本"],
+["临渊羡鱼","想得到却无实际行动"],
+["有恃无恐","因有所依仗而毫不害怕"],
+["堂而皇之","公然而毫不掩饰（中性、贬义皆可）"],
+["明目张胆","公开、毫无顾忌地做坏事（明显贬义）"],
+["浑水摸鱼","制造混乱、趁机获取利益"],
+["投机取巧","利用时机和不正当手段谋取利益"],
+["落井下石","趁人有难借机加害"],
+["虚张声势","纸老虎、外强内空"],
+["以偏概全","片面看待"],
+["吹毛求疵","鸡蛋里挑骨头、刻意挑毛病"],
+["抱薪救火","方法达不到目的、情况更糟"]
+]},
+{name:"某些国家的错误做法",items:[
+["画地为牢","限制自己、不融入集体"],
+["以邻为壑","只顾自己、转嫁危机"],
+["穿凿附会","强行解释"],
+["亦步亦趋","缺乏主见、别人做啥我做啥"],
+["唯利是图","只要有利可图、什么都干"],
+["竭泽而渔","掠夺资源、断绝长远来源"],
+["杀鸡取卵","贪图眼前利益、毁掉长远根基"],
+["寅吃卯粮","透支未来、负债度日"],
+["饮鸩止渴","解一时之需、但有恶果"],
+["急功近利","急于求成、贪图眼前成效利益"],
+["隔岸观火","看热闹、幸灾乐祸"],
+["置身事外","已在其中却不想卷入、逃避责任"],
+["袖手旁观","看见危难、不出手相助"],
+["作壁上观","只观望、不参战"],
+["坐收渔利","别人打架、你占便宜"],
+["坐享其成","别人干活、你享福"]
+]},
+{name:"国家安定与动荡",items:[
+["背井离乡","侧重离开家乡"],
+["流离失所","侧重没有住处、无处安身"],
+["颠沛流离","路途奔波艰辛"],
+["安土重迁","安于本乡本土、不愿轻易迁移"],
+["安居乐业","百姓生活安定（民众）"],
+["海晏河清","天下太平（国家）"],
+["国泰民安","国家太平、人民安康（国家+民众）"]
+]},
+{name:"国内国际关系",items:[
+["休戚与共","祸福一起扛"],
+["同气连枝","本是一家人"],
+["唇齿相依","互相依靠"],
+["唇亡齿寒","出事连累你"],
+["守望相助","邻里患难互助"],
+["一衣带水","地理位置近"],
+["同舟共济","危难携手闯关"],
+["同心同德","想法一致（不一定有困难）"],
+["和衷共济","内部齐心办事"],
+["水乳交融","融合融洽、毫无隔阂（融合/军民）"],
+["相濡以沫","身处苦难、互相扶持（困难/夫妻）"],
+["风清气正","政治、网络环境好"],
+["波诡云谲","套路多、暗流涌动"],
+["风云变幻","变得快、时局动荡"],
+["纵横捭阖","外交手段"],
+["貌合神离","面和心不和"],
+["沆瀣一气","坏人一拍即合、联手作恶"],
+["同流合污","本来尚可、掉进坏人堆里跟着干坏事"]
+]},
+{name:"政府优秀做法",items:[
+["因地制宜","看地方办事"],
+["因时制宜","看时间办事"],
+["量体裁衣","看对象量身定制"],
+["对症下药","针对病根解决问题"],
+["有的放矢","做事瞄准目标、不瞎忙活"],
+["广开言路","给大家说话的机会（上级）"],
+["集思广益","收集大家的点子（上级）"],
+["正本清源","从根上整顿清理"],
+["慎终如始","从头到尾一直谨慎"],
+["因势利导","顺着事物发展趋势加以引导"],
+["保驾护航","保护某事物让其能正常发展"],
+["穿针引线","牵线搭桥、从中联系"],
+["添砖加瓦","通过具体行动为集体贡献力量"],
+["各司其职","每人都做职责范围内的事"],
+["群策群力","大家都想办法、一起做（群众）"]
+]},
+{name:"合理规划",items:[
+["开源节流","一边赚钱、一边省钱"],
+["精打细算","花钱处处算计"],
+["细水长流","慢慢来、撑得久；不间断做事"],
+["量入为出","赚多少就花多少"]
+]},
+{name:"政府措施的评价",items:[
+["立竿见影","见效速度快"],
+["一劳永逸","做一次就不用再折腾"],
+["行之有效","办法有效"],
+["一蹴而就","很容易、一下成功（多用于否定）"],
+["迎刃而解","问题解决很顺利"],
+["事半功倍","费力小、收效大"],
+["釜底抽薪","直击根源、根除病根（只治本）"],
+["标本兼治","表里齐抓、治标又治本（双向兼顾）"]
+]},
+{name:"成功与失败",items:[
+["触手可及","距离近、容易触碰"],
+["唾手可得","获取十分容易"],
+["轻而易举","事情非常容易做"],
+["游刃有余","处理问题不慌不忙"],
+["手到擒来","成功率高、出手即成功"],
+["得心应手","技能熟练"],
+["举重若轻","能力强、处理问题轻松"],
+["一步登天","境遇/地位急速上升"],
+["信手拈来","写作、演讲熟练地引经据典；技术熟练"],
+["束手无策","做不了（难以采取行动）"],
+["一筹莫展","想不到（反复思考没思路）"],
+["无计可施","没办法、不知道怎么做"],
+["功亏一篑","差最后一把、之前努力全白费"],
+["功败垂成","快要成功、遭遇意外受阻"],
+["失之交臂","遗憾错过"],
+["适得其反","取得反面结果"]
+]},
+{name:"领导力",items:[
+["高屋建瓴","观点站位高（报告、讲话、理论宏大有指导性）"],
+["高瞻远瞩","眼光看得远（预见未来、长远战略眼光）"],
+["深谋远虑","谋划想得细（筹划周密、提前考虑隐患）"],
+["审时度势","看清当下局（分析局势、判断时机、灵活调整）"],
+["运筹帷幄","出计谋、指挥、战略规划"],
+["统筹兼顾","多个领域、多主体、多项任务"],
+["身体力行","理念落实"],
+["亲力亲为","亲自干活"],
+["事必躬亲","事事包揽不放权（暗含不懂放权）"],
+["克己奉公","一心为公"],
+["以身作则","做好榜样（普通人、管理者）"],
+["率先垂范","带头做事（领导/公文书面）"],
+["身先士卒","领导带头、走在群众前面/一线冲锋"],
+["一马当先","凡事争先、不惧难局"],
+["上行下效","上有所好、下必跟随"],
+["一以贯之","持续贯彻一套准则、方针"],
+["矢志不渝","坚守初心理想、永不改变"]
+]},
+{name:"正义精神和做法",items:[
+["前仆后继","群体接续战斗、不怕死"],
+["视死如归","面对死亡威胁、不怕牺牲"],
+["大义凛然","遭受胁迫、坚守正义"],
+["踔厉奋发","精神振奋、斗志昂扬（精神）"],
+["笃行不怠","踏实干、坚持不懈（行动）"],
+["赓续前行","传承接续"],
+["奋楫争先","拼搏赶超、力争上游"],
+["砥砺前行","环境艰难往前走（逆境奋进）"],
+["勇毅前行","意志坚定往前走（意志魄力）"],
+["披荆斩棘","主动扫清前路障碍（行动）"],
+["百折不挠","受挫依旧不肯低头（意志）"],
+["任重道远","任务重、还有很多路要走"]
+]},
+{name:"干部易犯错误",items:[
+["好高骛远","目标定太高、不接地气（眼光问题）"],
+["好大喜功","热衷搞大事、贪求功绩（动机问题）"],
+["沽名钓誉","不择手段骗名气"],
+["附庸风雅","硬装文化人充高雅（文艺圈层）"],
+["独善其身","身在局内、只顾自己、不顾大局"],
+["明哲保身","害怕惹祸、回避争端、谨慎自保"],
+["虚与委蛇","假意周旋、客套不真心"],
+["委曲求全","忍让妥协、为顾全大局"],
+["敷衍塞责","工作应付、不负责任"],
+["曲意逢迎","违背本心刻意讨好"],
+["投其所好","抓住喜好取悦对方"],
+["阿谀奉承","甜言蜜语吹捧谄媚（言语）"],
+["趋炎附势","巴结权贵"],
+["如蚁附膻","众人扎堆追逐名利（群体）"],
+["阳奉阴违","表面顺从、暗中违抗"],
+["掩人耳目","制造假象、隐瞒真相"],
+["兴师动众","人力多、声势大"],
+["劳民伤财","人力财力双消耗、代价巨大"],
+["朝令夕改","政令变化快"],
+["粗枝大叶","人粗心、细节容易出错"],
+["大而化之","办法粗、只抓大体不细化"],
+["具体而微","形态完整、规模小"],
+["哗众取宠","刻意制造噱头、博取眼球"],
+["凌空蹈虚","方案/理论缺乏现实基础"],
+["厚此薄彼","对人对事不平等"]
+]},
+{name:"对待错误的态度",items:[
+["从谏如流","乐于接受下级/臣子的规劝、批评（身份限定强）"],
+["从善如流","主动采纳正确建议（重行动）"],
+["闻过则喜","专门针对「指出自身错误」"],
+["虚怀若谷","人的整体修养、通常搭配「胸襟」"],
+["刚愎自用","性格+权力、傲慢专断"],
+["固执己见","死守原有观点、不愿更改（不一定傲慢）"],
+["自以为是","打心底认为自己全对、轻视他人"],
+["文过饰非","重在「巧言掩饰」、洗白"],
+["怙恶不悛","屡教不改、长期作恶、毫无悔意"],
+["欲盖弥彰","遮掩反而暴露、错处更显眼"],
+["讳疾忌医","不敢直面自身短板"],
+["洗心革面","内心+行为彻底改过（前提犯过错）"],
+["脱胎换骨","全方位根本性改变"],
+["改头换面","仅改动表面包装"],
+["惩前毖后","治理政策、从以前错误中吸取教训"]
+]},
+{name:"改变与不变",items:[
+["一成不变","拒绝变通（多贬义）"],
+["亘古不变","从古至今漫长岁月（中性偏褒义）"],
+["改弦更张","原有制度、政策、管理体系变更"],
+["改弦易辙","行动路线或发展方向的变更"],
+["变幻莫测","多变+不可预测"],
+["瞬息万变","变化快"],
+["光怪陆离","样子奇特、怪异"],
+["经久不衰","经历、经受时间考验"],
+["长盛不衰","长久繁荣鼎盛"],
+["今非昔比","古今对比、当下更好"],
+["时过境迁","外部形势、环境有变化"],
+["沧海桑田","历史面貌的长久剧变"],
+["斗转星移","单纯岁月流转"],
+["白云苍狗","变化速度快"],
+["恍如隔世","亲历者的内心感受"],
+["根深蒂固","观念扎根深"],
+["积习难改","难改掉坏习惯和作风（时间久）"],
+["积重难返","社会/行业/制度弊病、群体坏风气"],
+["覆水难收","既定事实、无法撤回挽回"]
+]},
+{name:"顺势造势",items:[
+["顺势而为","主动有智慧地借势做事"],
+["大势所趋","整个大局、时代大潮流的必然走向"],
+["势在必行","紧迫性、必要性（不得不做）"],
+["随波逐流","没有主见（盲从）"],
+["因陋就简","将就办事"],
+["推波助澜","助长坏事、让乱象恶化"],
+["顺水推舟","借用现成局势、借力办事"]
+]},
+{name:"自然会发生",items:[
+["理所当然","道理、道义、本分上讲就该如此（主观）"],
+["顺理成章","逻辑、因果过程"],
+["水到渠成","客观条件、沉淀、时机成熟"],
+["顺其自然","不强求（心态、缘分）"],
+["天经地义","绝对正确、不能改变的道理"]
+]},
+{name:"提早准备和补救",items:[
+["居安思危","思想层面警醒"],
+["未雨绸缪","提前动手准备"],
+["防患未然","阻止灾祸发生"],
+["曲突徙薪","从根源根除隐患（程度最重）"],
+["常备不懈","长年累月保持戒备、不松懈"],
+["防微杜渐","坏事刚露头就制止"],
+["临渴掘井","急需之时才临时筹备"],
+["江心补漏","险境临门、补救难度极大"],
+["亡羊补牢","事后及时补救、止损"],
+["高枕无忧","准备得当没有忧虑"]
+]},
+{name:"办公·管理相关",items:[
+["尾大不掉","管控失灵、管不动下级"],
+["各行其是","各做各的、互不配合"],
+["各自为政","无视统一政令、自成一套体系"],
+["如鱼得水","工作环境得心应手、施展自如"],
+["面面俱到","考虑周全、所有细节都顾及"],
+["独当一面","能力强、可独立承担一摊工作"]
+]},
+{name:"空谈与虚幻",items:[
+["纸上谈兵","空谈理论、不实践"],
+["坐而论道","只会说、不肯干"],
+["水中捞月","目标假、干不成"],
+["画饼充饥","空想+开空头支票"],
+["无根之木","没有根基、缺乏依据"],
+["故弄玄虚","故意玩弄花招迷惑别人"],
+["空穴来风","传闻毫无根据"],
+["天马行空","想象力奔放；做事脱离现实"],
+["空中楼阁","有想法、没实际根基"],
+["镜花水月","美好却抓不住、得不到"],
+["海市蜃楼","虚假幻象、繁荣、梦想"],
+["天方夜谭","言论、方案、设想离谱"],
+["虚无缥缈","不真实、虚幻"]
+]},
+{name:"来客众多",items:[
+["接踵而至","接连发生、不间断"],
+["络绎不绝","行人、车辆、船只"],
+["纷至沓来","接连发生或四面八方杂乱地涌来"],
+["蜂拥而至","扎堆来"],
+["不期而遇","没约定碰面（双向碰面）"],
+["不期而至","意外来到（单向降临）"],
+["萍水相逢","陌生人遇见（双向碰面）"],
+["门庭若市","人多、热闹"],
+["无人问津","极少或无（程度重）"],
+["门庭冷落","少、冷落"],
+["门可罗雀","少、冷落（书面化）"],
+["人迹罕至","地点荒无人烟"],
+["如影随形","关系十分亲密；形容问题无法摆脱"]
+]},
+{name:"人多人少",items:[
+["熙熙攘攘","喧闹拥挤、来回走动"],
+["人山人海","人数极多、规模盛大"],
+["车水马龙","车+人、重车流"],
+["川流不息","持续流动、不间断（范围广）"],
+["万人空巷","所有人走出家门赴盛会"],
+["孑然一身","孤身一人（可褒义）"],
+["茕茕孑立","无依无靠（程度最重）"],
+["形影相吊","孤单、独处的冷清画面"],
+["形单影只","孤身一人（程度最轻）"]
+]},
+{name:"好坏掺杂",items:[
+["参差不齐","水平、质量高低不一"],
+["泥沙俱下","量大、好坏都有、乱象（范围最广）"],
+["良莠不齐","好人坏人、好料坏料（质量）"],
+["鱼龙混杂","好人坏人、好料坏料（主要形容人）"],
+["鱼目混珠","以次充好、以假乱真（多指物）"],
+["滥竽充数","以次充好（物）、混队伍（人）"],
+["买椟还珠","主次颠倒、取舍不当（不识货）"]
+]},
+{name:"流行与名声",items:[
+["如雷贯耳","名声极大、听着熟"],
+["炙手可热","气焰盛、权势大、抢手"],
+["名噪一时","短期出名"],
+["闻名遐迩","远近闻名"],
+["声名显赫","影响大、声望高"],
+["靡然成风","坏风气、不良习惯成风潮"],
+["大行其道","多指坏事物的流行"],
+["甚嚣尘上","谣言、负面言论议论纷纷"],
+["声名鹊起","从零走红"],
+["名声大噪","爆火轰动"],
+["趋之若鹜","很多人争相追逐"]
+]},
+{name:"与传播·传闻相关",items:[
+["以讹传讹","越传越错"],
+["无孔不入","到处渗透、钻空子传"],
+["铺天盖地","到处都是、传播范围大"],
+["道听途说","来源不靠谱"],
+["街谈巷议","百姓街头闲聊"],
+["稗官野史","民间非正式记载"],
+["脍炙人口","文学、文艺等作品人人称颂"],
+["津津乐道","兴致勃勃地热议（主语是人）"],
+["喜闻乐见","文化、文艺活动受人喜爱"],
+["深入人心","内心上认同（理念、价值观、共识、制度、思想）"],
+["三人成虎","谣言信以为真"],
+["众口铄金","混淆是非、毁人毁物（程度稍重）"]
+]},
+{name:"消失·重现",items:[
+["烟消云散","抽象情绪的散开"],
+["灰飞烟灭","彻底覆灭消亡（程度重）"],
+["化为乌有","原有事物清零"],
+["子虚乌有","纯属虚构、从未存在"],
+["稍纵即逝","机遇、时间难抓"],
+["昙花一现","风光短暂"],
+["销声匿迹","躲藏隐身"],
+["偃旗息鼓","停止行动、收手"],
+["死灰复燃","压下去的旧毛病复发"],
+["卷土重来","失败者重整势力杀回"],
+["沉渣泛起","陈旧腐朽的糟粕浮出（思想、言论、观念）"],
+["土崩瓦解","根基崩坏、彻底垮台"],
+["分崩离析","内部分裂、人心离散"]
+]},
+{name:"明显·含糊",items:[
+["毋庸置疑","别怀疑（确凿）"],
+["显而易见","外在或逻辑很清楚"],
+["不言而喻","不用讲（默契/道理）"],
+["昭然若揭","露馅了（贬义/暴露）"],
+["有目共睹","一眼就能明白"],
+["大张旗鼓","声势浩大公开干（行动造势）"],
+["无所遁形","坏人坏事藏不住（无法躲藏）"],
+["语焉不详","说了但没细节"],
+["讳莫如深","死咬着绝口不提"],
+["暗度陈仓","背地里搞小动作"],
+["不露声色","心里有数面不改色"],
+["闪烁其词","说了但躲躲闪闪"],
+["扑朔迷离","事情复杂（案情局势）"],
+["雾里看花","看不清、认识不透彻"],
+["似是而非","好像对其实错、具有迷惑性"],
+["高深莫测","无法揣测"],
+["含糊其辞","说话表述模糊"]
+]},
+{name:"重视·重要",items:[
+["置若罔闻","听觉、听见但无视"],
+["充耳不闻","听觉、拒绝接收"],
+["熟视无睹","视觉、看多麻木"],
+["闭目塞听","全盘隔绝信息"],
+["置之不理","行动、放着不管不处理"],
+["嗤之以鼻","嘲笑、鄙夷"],
+["视如敝屣","嫌弃东西没价值"],
+["不屑一顾","懒得理睬"],
+["束之高阁","放着不用"],
+["爱不释手","舍不得放（物品+动作）"],
+["手不释卷","书不离手（书籍+学习）"],
+["视若珍宝","当宝贝看（人/物/情+价值）"],
+["奉为圭臬","当准则用（思想/理论/标准+遵从）"],
+["举足轻重","一动全局（关键角色/事件）"],
+["无足轻重","有无皆可（无影响的人/事）"],
+["细枝末节","琐碎小事、非核心细节"]
+]},
+{name:"熟悉·了解·知晓",items:[
+["驾轻就熟","干活熟练（本领高）"],
+["轻车熟路","门路熟悉（路子熟）"],
+["了如指掌","内情摸清（全知道）"],
+["耳熟能详","听多便熟（听得多）"],
+["如数家珍","喜爱细说（讲得细）"],
+["烂熟于心","背诵牢记（记得牢）"],
+["不甚了了","了解模糊"],
+["默默无闻","做人低调无声"],
+["鲜为人知","很少人知道（人或事）"],
+["妇孺皆知","强调简单、普及（道理、常识、事实）"],
+["家喻户晓","强调名气大、传得广（名人、品牌、传闻）"],
+["匪夷所思","违背常理、举动离谱"],
+["不可思议","奇妙惊叹、超乎想象"],
+["感同身受","共情情绪"],
+["设身处地","换位思考"],
+["身临其境","亲临环境"],
+["推己及人","己所不欲勿施于人"]
+]},
+{name:"很常见不奇怪",items:[
+["司空见惯","事情常见"],
+["见怪不怪","怪事看多、不惊慌"],
+["屡见不鲜","事件频繁出现"],
+["无独有偶","有巧合"],
+["习以为常","成习惯"],
+["习焉不察","经常接触、忽略问题"],
+["不足为奇","普通、不奇怪"],
+["微不足道","不重要"]
+]},
+{name:"看法·政治",items:[
+["各持己见","各自坚持自己的意见"],
+["众说纷纭","人多嘴杂、意见不一"],
+["莫衷一是","意见不统一"],
+["针锋相对","尖锐对立（程度重）"],
+["各执一词","双方争论、观点对立"],
+["见仁见智","看法不一"],
+["各抒己见","个人充分发表自己的见解"],
+["不置可否","不表态（不说）"],
+["模棱两可","说法含糊不明确（说了）"],
+["人心所向","人民群众大家拥护、向往的"],
+["人心向背","人民群众拥护或反对"],
+["不负众望","没辜负大家的期望"],
+["不孚众望","辜负了大家的期望"],
+["异口同声","不同的人说出同样的话"],
+["众口一词","大家说的话完全相同、意见完全一致"]
+]},
+{name:"从细节看全貌",items:[
+["一孔之见","自谦、见解狭窄"],
+["管窥蠡测","眼光狭窄、见识短浅"],
+["盲人摸象","看问题不全面、以偏概全"],
+["管中窥豹","看法片面；从局部推知整体"],
+["坐井观天","眼界格局狭隘"],
+["一叶障目","被某物挡住、看不到全局本质"],
+["断章取义","截取片段、脱离上下文、歪曲本意"],
+["一叶知秋","预测未来、预判趋势"],
+["见微知著","以小见大"],
+["由表及里","表层到本质"],
+["冰山一角","已知很少、还有大量未知"],
+["可见一斑","局部推知整体特点"]
+]},
+{name:"看事情透彻",items:[
+["远见卓识","看得长远、透彻"],
+["真知灼见","见解正确透彻"],
+["鞭辟入里","分析评论透彻"],
+["一针见血","抓住痛点、切中要害"],
+["一语中的","一句话说清重点"],
+["一语成谶","不幸言中"],
+["字字珠玑","字字到位、措辞精妙"],
+["颠扑不破","绝对可靠、不可推翻"],
+["针砭时弊","批判、指出当下社会/现实弊端"],
+["洞若观火","观察事物本质、分析透彻（局势、人心、深层问题）"],
+["明察秋毫","敏锐洞察细微线索、微小过错"],
+["一目了然","看起来简单直观"],
+["一览无余","看得全、尽收眼底"]
+]},
+{name:"态度和评价",items:[
+["大有可为","未来可期"],
+["无可厚非","虽有缺点但可谅解"],
+["无可非议","完全正确"],
+["差强人意","大体满意"],
+["毋庸讳言","大方地说"],
+["缄口不言","闭着嘴不说"],
+["乏善可陈","没有什么优点可说"],
+["外强中干","外表强大、内在虚弱"],
+["名副其实","名声和实力对应"],
+["当之无愧","配得上、当得起"],
+["色厉内荏","外表凶狠、内心胆小"],
+["敬而远之","表面尊敬、但不亲近"],
+["难能可贵","品质/行为难得珍贵"]
+]},
+{name:"数量多与少",items:[
+["凤毛麟角","少且珍贵（人/事物）"],
+["寥若晨星","少（多用于贬义语境）"],
+["屈指可数","数量不多、数得过来"],
+["九牛一毛","占比小"],
+["沧海一粟","个人/事物渺小"],
+["汗牛充栋","藏书多"],
+["浩如烟海","书籍、古籍、文献多"],
+["卷帙浩繁","书厚、大部头"],
+["车载斗量","多（自豪感）"],
+["不胜枚举","多（记录/例子）"],
+["俯拾皆是","多且易得（实物/素材）"],
+["数不胜数","多"],
+["不一而足","多（等等）"],
+["五花八门","种类繁多"],
+["包罗万象","内容丰富、什么都包含在内"],
+["林林总总","繁多（偏杂）"],
+["比比皆是","分布广、到处都能见到"],
+["不可胜数","多（更书面）"],
+["不计其数","数量巨大"]
+]},
+{name:"建筑相关",items:[
+["美轮美奂","建筑高大华美；也可修饰盛大场面"],
+["富丽堂皇","建筑奢华气派"],
+["雕梁画柱","雕刻彩绘"],
+["流光溢彩","灯光色彩绚烂"],
+["飞阁流丹","阁楼高耸、彩绘鲜艳"],
+["错落有致","高低交错、布局美"],
+["鳞次栉比","密而整齐、多用于楼房屋舍"],
+["星罗棋布","数量多、分布广"]
+]},
+{name:"相同与不同",items:[
+["如出一辙","完全一样（行为、说法等）"],
+["千篇一律","一个模样没新意（贬义）"],
+["不约而同","动作、行为同时发生"],
+["不谋而合","没商量看法一致；天然属性吻合"],
+["殊途同归","路径不一样、最终结果相同（中性）"],
+["异曲同工","方式不一样、效果同样出色（褒义）"],
+["大相径庭","大不相同"],
+["泾渭分明","边界、界限明晰"],
+["千姿百态","形态不同、样式丰富"],
+["相去甚远","差距大"],
+["判若云泥","高低、优秀悬殊极大"],
+["天壤之别","与…有天壤之别（名词）"],
+["天差地别","差别巨大"],
+["迥然不同","完全不同"],
+["各有千秋","各有长处（主语≥2）"],
+["平分秋色","各得一半（主语=2）"],
+["分庭抗礼","平等对等、地位相当；对抗对立、势均力敌"]
+]},
+{name:"技艺精湛",items:[
+["巧夺天工","人工胜过天然（工艺品、建筑等）"],
+["精雕细琢","精细地雕琢"],
+["鬼斧神工","大自然"],
+["炉火纯青","技艺高超"],
+["登堂入室","学习、技艺由浅入深、进入较高境界"],
+["登峰造极","技艺高超到极点（程度最重）"],
+["目无全牛","技艺娴熟"],
+["庖丁解牛","技艺娴熟、掌握规律"],
+["出神入化","文学艺术或技艺达到绝妙境界"]
+]},
+{name:"观看欣赏",items:[
+["蔚为大观","盛大景象"],
+["洋洋大观","多"],
+["琳琅满目","美好的商品/产品/工艺品"],
+["引人入胜","内容、情节、景致有吸引力"],
+["雅俗共赏","兼顾高雅与通俗、受众广"],
+["叹为观止","惊叹好到极点"],
+["赏心悦目","看到美景、心情愉快"],
+["目不暇接","东西太多、眼睛看不过来（积极）"],
+["眼花缭乱","纷繁复杂、迷乱（消极）"],
+["心驰神往","向往的事物/地方"],
+["魂牵梦萦","万分思念、梦中牵挂"],
+["拍案叫绝","喝彩（搭配文章、表演等）"],
+["目不转睛","注意力高度集中、盯着看"]
+]},
+{name:"「说」相关",items:[
+["侃侃而谈","有理有据、从容不迫（褒）"],
+["高谈阔论","兴致勃勃议论；漫无边际空谈"],
+["夸夸其谈","说话浮夸、内容空洞（贬）"],
+["口若悬河","口才好、滔滔不绝（中）"],
+["巧舌如簧","善于狡辩、花言巧语（贬）"],
+["巧言令色","花言巧语讨好别人（贬）"],
+["娓娓道来","慢慢说、讲故事（褒）"],
+["信口雌黄","歪曲事实、随口胡说（贬）"],
+["言简意赅","言语简练、意思完备（褒）"],
+["直言不讳","坦率地说心里话（褒）"],
+["人云亦云","没主见、不思考（贬）"],
+["拾人牙慧","抄袭挪用别人的言语观点（贬）"],
+["推心置腹","私下沟通、倾诉心里话"],
+["开诚布公","公开不隐瞒"],
+["披肝沥胆","竭尽赤诚、忠心耿耿"],
+["老调重弹","重复没有新意的话"],
+["陈词滥调","言论陈旧没价值"],
+["老生常谈","重复的话、常常说"],
+["不经之谈","荒诞、违背常理"],
+["无稽之谈","没有依据"],
+["流言蜚语","造谣中伤、私下诋毁"],
+["危言耸听","故意夸大、使人害怕"]
+]},
+{name:"「演」相关",items:[
+["绘声绘色","讲故事/事情生动"],
+["活灵活现","像活的一样栩栩如生；讲故事有灵气"],
+["惟妙惟肖","描写/模仿得逼真"],
+["栩栩如生","像活的一样（雕塑、绘画、艺术形象）"],
+["有声有色","活动、工作、事情办得精彩"],
+["一板一眼","有章法守规矩；死板不变通（中偏贬）"],
+["呼之欲出","绘画文学形象刻画逼真；方案、政策、新事物即将出台"]
+]},
+{name:"「听」相关",items:[
+["此起彼伏","接连不断、交替起落（欢呼声、叫卖声、事物）"],
+["不绝如缕","声音、文化等不断；局势危急"],
+["经久不息","持续不断、时间长热烈（掌声、欢呼声）"],
+["震耳欲聋","声音大"],
+["人声鼎沸","现场热闹喧嚣"],
+["沸反盈天","极度喧哗、场面混乱"],
+["沸沸扬扬","流言、事件被到处传播议论"]
+]},
+{name:"「写」相关",items:[
+["佶屈聱牙","晦涩拗口"],
+["入木三分","书法笔力强劲；见解深刻透彻"],
+["只言片语","个别词句或片段的话"],
+["妙笔生花","写作/书法水平高"],
+["一气呵成","连续不断（做事/写文章）"],
+["倚马可待","写文章快"],
+["一挥而就","落笔即成（写字、绘画、书法等）"],
+["文不加点","快且好"],
+["春秋笔法","暗含褒贬"],
+["皮里阳秋","内心幽幽"],
+["微言大义","字数少、道理深"],
+["字斟句酌","推敲斟酌字句"],
+["连篇累牍","篇幅冗长（贬）"],
+["妙趣横生","文章讲话有趣"]
+]},
+{name:"「钱」相关",items:[
+["身无长物","穷"],
+["一文不名","穷"],
+["一穷二白","基础差、家底薄"],
+["积贫积弱","持续贫困、国力衰败"],
+["筚门圭窦","穷苦人家"],
+["桑枢瓮牖","穷苦人家"],
+["肥马轻裘","富人出行衣着气派（有钱）"],
+["钟鸣鼎食","饮食起居排场盛大（豪门）"],
+["养尊处优","娇生惯养"],
+["待价而沽","等待好的条件再出手"],
+["奇货可居","囤积稀罕、博取利益"]
+]},
+{name:"「心态」相关",items:[
+["随遇而安","适应环境、不挑环境"],
+["安之若素","安然处之像平常"],
+["安贫乐道","坚守道义、守住清贫"],
+["泰然处之","冷静应对难题"],
+["神色自若","面部神情淡定"],
+["从容不迫","遇事不慌"],
+["波澜不惊","内心无起伏"],
+["踌躇满志","对自己现状或未来充满信心"],
+["意气风发","昂扬向上的精神面貌"],
+["心旷神怡","身心愉悦"],
+["无所适从","不知道怎么选"],
+["如坐针毡","坐不住、煎熬"],
+["如芒在背","有压力、浑身不自在"],
+["手足无措","手脚慌乱"],
+["杯弓蛇影","疑神疑鬼"],
+["心浮气躁","静不下心"],
+["举棋不定","犹豫不决"]
+]},
+{name:"顾忌和无所顾忌",items:[
+["噤若寒蝉","害怕不出声"],
+["谈虎色变","谈及某事就恐慌"],
+["畏首畏尾","顾虑过多"],
+["投鼠忌器","顾忌不敢下手"],
+["肆意妄为","放纵自己做坏事（行动）"],
+["肆无忌惮","没有畏惧和约束（状态）"]
+]},
+{name:"调查相关",items:[
+["按图索骥","按线索查找；死板不变通"],
+["刨根问底","问到底"],
+["顺藤摸瓜","沿着线索找到根源"],
+["披沙拣金","筛选精华"],
+["捕风捉影","凭空猜测、毫无依据"]
+]},
+{name:"自我评价不当",items:[
+["妄自菲薄","过分看轻自己"],
+["自惭形秽","对比感到羞愧"],
+["自暴自弃","放弃自己"],
+["自怨自艾","悔恨自己的过错"],
+["怨天尤人","怪外界、怪别人"],
+["夜郎自大","妄自尊大"],
+["盛气凌人","气势嚣张傲慢"],
+["孤芳自赏","自我欣赏"]
+]},
+{name:"自我革命",items:[
+["刮骨疗毒","彻底整治、根除问题"],
+["壮士断腕","主动割舍、保全大局"],
+["刀刃向内","向内自省、自我开刀"],
+["去腐生肌","清除糟粕、焕新机体"],
+["猛药去疴","重拳出击、根治顽疾"]
+]},
+{name:"近似成语·辨析",items:[
+["弹冠相庆","小人得志（贬）"],
+["额手相庆","庆幸庆贺（褒）"],
+["优胜劣汰","市场竞争"],
+["弱肉强食","丛林法则"],
+["粉墨登场","坏人登上政治舞台"],
+["登堂入室","学问技艺由浅入深"],
+["百家争鸣","思想、学术、理论观点"],
+["百花齐放","文学、艺术、戏曲、绘画等文艺"],
+["耸人听闻","假事（故意夸大）"],
+["骇人听闻","真事（令人震惊）"],
+["不易之论","不能更改的言论（轻）"],
+["不刊之论","不可磨灭的真理（重）"],
+["曲高和寡","高雅导致欣赏者少"],
+["阳春白雪","高雅"],
+["戎马倥偬","军务繁忙"],
+["厉兵秣马","准备战斗"],
+["不容置喙","不许插嘴（没有发言权）"],
+["不容置疑","不许怀疑（不能被推翻）"],
+["不以为然","不同意"],
+["不以为意","不在意"],
+["移花接木","偷换部分内容"],
+["偷梁换柱","偷换关键核心"],
+["李代桃僵","代人受过"],
+["张冠李戴","对象匹配错"],
+["错综复杂","头绪多、复杂"],
+["盘根错节","纠缠牵扯深（程度更重）"]
+]},
+{name:"「雕刻」和「绘画」",items:[
+["描绘","描写刻画"],
+["刻画","深刻表现"],
+["壁画","搭配「蓝图」（宏观规划未来）"],
+["描摹","复制原貌"],
+["勾勒","简单几笔画出轮廓"],
+["铭刻","铭记于心（手心、脑海、历史）"],
+["镌刻","实物雕刻（石碑、丰碑、器物）"]
+]},
+{name:"集中到一起",items:[
+["凝聚","多用于抽象（力量/共识/人心）"],
+["凝结","具体（气变液/液变固）+抽象（心血/汗水/智慧结晶）"],
+["凝固","具体（液变固）+抽象（停滞定格）"],
+["汇聚","动态汇合（江河/力量/目光）"],
+["汇集","收集汇总（资料/数据/资源）"],
+["聚集","人/物聚在一起"]
+]},
+{name:"表明两者关系",items:[
+["承载","承受包含（记忆/文化/乡愁）（动词）"],
+["载体","媒介工具（文化/传播载体）（名词）"],
+["延伸","延长扩展（产业链/内涵/触角）"],
+["代表","指代代替"],
+["象征","具体到抽象（鸽子象征和平）"],
+["标志","标明显示（提示一个节点、时代、事件到来）"],
+["桥梁","通道（友谊/沟通/文化交流的桥梁）"],
+["媒介","中介（传播/文化媒介）"],
+["枢纽","核心连接点（交通/物流/数据枢纽）"],
+["纽带","维系（情感/血缘/文化）"],
+["反映","告诉/本质显露（现实/社会变迁）"],
+["印证","证明（猜想/判断/观点/道理）"],
+["见证","目睹（历史/变迁/奇迹）；证据"],
+["缩影","以小见大、局部反映整体（时代/社会/历史）"],
+["典型","代表性的样本（案例/先进）"]
+]},
+{name:"对外界的反映",items:[
+["映照","反映衬托（晚霞映照大地/文物映照时代）"],
+["折射","间接反映本质（社会矛盾/大众心态/现实问题）"],
+["映射","倒映反射（文化/价值的映射）"],
+["投射","投掷照射（目光/情感；内心的投射）"],
+["诠释","用行动作品体现精神内涵（精神/内涵/价值）"],
+["阐释","阐明解释、偏理论学术（理论/观点/制度）"],
+["彰显","鲜明地显示（褒）（价值/优势/担当/文化自信）"],
+["凸显","清楚地显露（中）（矛盾/短板/优势/重要性）"],
+["渲染","夸张（气氛/负面情绪）"],
+["烘托","衬托（人物形象/主题/意境）"]
+]},
+{name:"两者融合",items:[
+["交融","彼此渗透（情理/古今/水乳交融）"],
+["融合","合二为一（产业/城乡/民族/技术/文旅）"],
+["融入","单向进入（集体/城市生活/主流文化）"],
+["介入","外部干预（中性）（司法力量/行政/科技）"],
+["渗透","进入（过程）（文化渗透）"],
+["渗入","进到里面（结果）（雨水渗入泥土）"],
+["裹挟","被迫卷入（被时代洪流裹挟）"],
+["嵌入","镶入套入（绿色理念嵌入发展规划）"],
+["植入","移植、放入（广告植入）"]
+]},
+{name:"作用下的结果",items:[
+["积淀","积累沉淀（文化、历史、底蕴）"],
+["沉淀","静置过滤留下精华（岁月/时间的沉淀）"],
+["积累","由少变多（素材/经验/人脉）"],
+["滋润","补水；生活舒适"],
+["浸润","褒义，思想、文化、风气潜移默化地熏陶"],
+["滋生","贬义（蚊虫/细菌/腐败/形式主义问题）"],
+["涵养","素质；培育养护使充裕（水源/生态/乡土文明）"],
+["滋养","供给养分（文明/生命）"],
+["腐蚀","由内败坏变质（机体/干部/理想信念）"],
+["侵蚀","由外向内损坏（国土/生存空间/健康）"]
+]},
+{name:"动作",items:[
+["培育","由无到有塑造（人才/新质生产力）"],
+["激发","原本有没显露、外力触发（兴趣/潜能/创造力）"],
+["激励","鼓励使其奋进（机制/政策）"],
+["引领","前边带领带头（潮流/科技创新/产业升级）"],
+["引导","旁边规劝指引（舆论/行为）"],
+["推动","后边施加外力（改革/产业转型）"],
+["发扬","实践层面施展（民主/传统/优良作风）"],
+["弘扬","宣传层面普及（传统文化/主旋律/家国情怀）"],
+["贯穿","始终（以人民为中心…全过程）"],
+["贯通","打通（线路/融会贯通）"],
+["重塑","重新塑造（形象、认知、品牌等）"],
+["重构","重新构建（结构、框架、体系等）"]
+]},
+{name:"事物变化",items:[
+["演进","强调进步（文明/技术/社会形态）"],
+["演变","强调变化（中）（文字/词义/风俗/气候）"],
+["演绎","逻辑推演论证；阐释故事内涵"],
+["转化","新旧形态转换（科技成果转化）"],
+["蜕变","一段时间的向好质变（自我/人生/产业）"],
+["嬗变","漫长周期的宏大演变（时代/审美/风俗）"],
+["趋势","面向未来（发展/主流/数字化）"],
+["态势","立足当下（良好/发展态势）"],
+["催生","创新发展带来新事物（新业态/新模式）"],
+["催化","加速反应"],
+["衍生","母体分化出的副产品（衍生品/问题/风险）"]
+]},
+{name:"表示包容",items:[
+["蕴含","内部含有、使用广泛（思想/道理/价值）（抽象）"],
+["蕴藏","藏在其中（矿产资源/发展潜力/机遇）"],
+["包蕴","包容蕴藏（文艺小众）"],
+["意蕴","内在韵味（名词，文学、艺术话题）"],
+["囊括","全、无一遗漏"],
+["涵盖","广、覆盖内容多"]
+]},
+{name:"事情不顺利",items:[
+["泥沼","（泥淖）淤泥沼泽（跳出/挣脱泥沼）"],
+["牢笼","笼子（冲破/挣脱牢笼）"],
+["窠臼","俗套（不落窠臼）"],
+["桎梏","古代手铐脚镣（打破/破除/挣脱）"],
+["藩篱","篱笆（跨越/冲破）"],
+["壁垒","军营围墙（破除/打通）"],
+["隔阂","误会嫌隙（消除/化解）"],
+["障碍","阻碍（扫清/克服/清除）"],
+["羁绊","（柔）情感/亲情/命运的羁绊"],
+["束缚","（硬）观念/形式主义/封建主义的束缚"],
+["妨碍","阻碍（秩序/工作/学习/休息）"],
+["阻滞","停滞（神经/心脏传导阻滞、发育阻滞）"],
+["制约","限制约束（资源制约发展）"],
+["踟蹰","犹豫不前"],
+["徜徉","悠闲漫步（花海/书海）"],
+["徘徊","走来走去；犹豫"]
+]},
+{name:"准则标准",items:[
+["圭臬","学术（程度重）奉为圭臬"],
+["准绳","政务（程度适中）以法律为准绳"]
+]},
+{name:"两者区分",items:[
+["剥离","脱落分开"],
+["剔除","剔出除去"],
+["分离","彼此分开"],
+["甄别","仔细筛选辨别好坏（人才/海量信息）"],
+["鉴别","鉴别真假好坏（多用于实物、文物）"],
+["辨别","区别差异（方向/是非）"],
+["识别","认识辨认出来（人脸/身份）"]
+]},
+{name:"比喻象征意象",items:[
+["风向标","引导趋势、指示方向的人或物（侧重导向性、前瞻性）"],
+["指南针","前进的方向、行动的准则（侧重指引前进）"],
+["助推器","推动事物发展的强大动力（侧重推动加速）"],
+["压舱石","稳定全局的关键力量（侧重基础、保障、托底）"],
+["晴雨表","反映事物变化趋势的指标（侧重反映）"],
+["定盘星","事物的基准核心（侧重准则、方向、思想引领）"],
+["指挥棒","引导、调控、约束的导向机制"],
+["试金石","检验事物真假优劣的关键标准（侧重检验、验证）"],
+["敲门砖","谋求名利、资格的工具跳板"],
+["磨刀石","磨炼本领意志的工具或环境"],
+["硬通货","保值性强、流通认可度高、不易贬值的事物"],
+["牛鼻子","事物最核心、最关键的主要矛盾、关键抓手"],
+["桥头堡","前沿据点、先行试验区、开拓进取的前沿阵地"],
+["车轮战","轮番上阵、分批作战"],
+["持久战","长期战斗"],
+["攻坚战","攻坚克难"]
+]},
+{name:"其他词语",items:[
+["蔓延","像藤蔓一样向四周扩张扩散（疫情/火势）"],
+["漫延","液体、气体等向四周扩散"],
+["秉承","继承遵照（初心/先辈精神/上级旨意）"],
+["秉持","持有（原则/公正/开放理念/初心）（书面政务）"],
+["契合","吻合适合（理念/需求/心灵）"],
+["耦合","联动配合（供需/深度耦合）（学术社科理工话题）"],
+["观照","审视体察（现实/内心/世界/历史）"],
+["审视","仔细查看（现状/冷静地审视）"],
+["凝视","专注地看"],
+["沿袭","依照旧有的制度做法习惯（传统/旧制/惯例）"],
+["承袭","接续前人的精神思想血脉（精神/文脉/家风）"],
+["肇始","开始"],
+["发轫","起源"],
+["开端","开头"],
+["滥觞","雏形"],
+["孕育","诞生（0到1）"],
+["式微","传统技艺、文化等由盛转衰"],
+["湮灭","彻底消失（记忆/文明/粒子）"],
+["共鸣","思想情感意志内心相通（情感/引发共鸣）"],
+["升华","层次提升（思想/情感/境界/认知/主题）"],
+["深化","深处推进（改革/合作）"],
+["支撑","提供保障、稳住根基（产业/理论/精神）"],
+["塑造","构建出形象、品格、格局等抽象样貌"],
+["媲美","美好的程度可以相比（褒义）"],
+["比肩","并肩而立、实力相当（中性）"],
+["争雄","较量比拼、争夺地位"],
+["引擎","发动机、提供动力（数字经济新引擎）"],
+["审慎","考虑周全（决策/研判/推进）"],
+["赓续","继续延续（抽象）（红色血脉/初心使命）"]
+]}
+];
+const WORDS = [];
+GROUPS.forEach(function(g, gi){
+  g.items.forEach(function(it){
+    WORDS.push({ id: WORDS.length, g: gi, w: it[0], m: it[1] });
+  });
+});
+
+/* ============ 本地存储 ============ */
+const LS_KEY = 'luoji-tiankong-cards-v1';
+function defaultStore(){
+  return { v:1, status:{}, wrong:[], flashDone:0, quizN:0, quizRight:0, lastAt:null };
+}
+let store = (function(){
+  try{
+    const raw = localStorage.getItem(LS_KEY);
+    if(raw){
+      const d = JSON.parse(raw);
+      if(d && d.v === 1) return Object.assign(defaultStore(), d);
+    }
+  }catch(e){}
+  return defaultStore();
+})();
+function saveStore(){
+  try{ localStorage.setItem(LS_KEY, JSON.stringify(store)); }catch(e){}
+}
+function statusOf(id){ return store.status[id] || null; } /* 'known' | 'unknown' | null */
+
+/* ============ 工具函数 ============ */
+function esc(s){
+  return String(s).replace(/[&<>"']/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+  });
+}
+function shuffle(a){
+  for(let i = a.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    const t = a[i]; a[i] = a[j]; a[j] = t;
+  }
+  return a;
+}
+function todayStr(){
+  const d = new Date();
+  const m = String(d.getMonth()+1).padStart(2,'0');
+  const day = String(d.getDate()).padStart(2,'0');
+  return d.getFullYear() + '-' + m + '-' + day;
+}
+function meanHtml(m){ return esc(m).replace(/~/g, '<span class="tilde">~</span>'); }
+function groupNameOf(w){ return GROUPS[w.g].name; }
+function groupOptions(sel){
+  let h = '<option value="-1">全部主题</option>';
+  GROUPS.forEach(function(g, i){
+    h += '<option value="' + i + '"' + (i === sel ? ' selected' : '') + '>' + esc(g.name) + '（' + g.items.length + '）</option>';
+  });
+  return h;
+}
+function filterGroup(list, g){
+  if(g < 0) return list;
+  return list.filter(function(w){ return w.g === g; });
+}
+
+/* ============ 路由 ============ */
+function parseHash(){
+  const h = (location.hash || '').replace(/^#\/?/, '') || 'flash';
+  const parts = h.split('?');
+  const p = {};
+  if(parts[1]){
+    new URLSearchParams(parts[1]).forEach(function(v, k){ p[k] = v; });
+  }
+  return { name: parts[0] || 'flash', param: p };
+}
+window.addEventListener('hashchange', render);
+
+/* ============ 闪卡状态 ============ */
+const fcState = { group:-1, dir:'w2m', shuffle:false, onlyUnknown:false };
+let fc = { list:[], idx:0, flipped:false, done:false };
+
+function fcBuildList(){
+  let list;
+  const ids = route.param.ids;
+  if(ids){
+    const set = {};
+    ids.split(',').forEach(function(x){ set[Number(x)] = true; });
+    list = WORDS.filter(function(w){ return set[w.id]; });
+  }else{
+    list = filterGroup(WORDS.slice(), fcState.group);
+    if(fcState.onlyUnknown) list = list.filter(function(w){ return statusOf(w.id) === 'unknown'; });
+  }
+  if(fcState.shuffle) shuffle(list);
+  return list;
+}
+function fcCurrent(){ return fc.list[fc.idx]; }
+function fcProgressHtml(){
+  const total = fc.list.length;
+  let known = 0, unknown = 0, seen = 0;
+  fc.list.forEach(function(w){
+    const s = statusOf(w.id);
+    if(s === 'known'){ known++; seen++; }
+    else if(s === 'unknown'){ unknown++; seen++; }
+  });
+  const pct = total ? Math.round(seen / total * 100) : 0;
+  return '<div class="progress-wrap">' +
+    '<span>本组已学 ' + seen + ' / ' + total + '</span>' +
+    '<div class="progress-track"><div class="progress-fill" style="width:' + pct + '%"></div></div>' +
+    '<span>认识 ' + known + ' · 生词 ' + unknown + '</span>' +
+    '</div>';
+}
+function fcRender(){
+  const prog = document.getElementById('fcProgress');
+  if(prog) prog.innerHTML = fcProgressHtml();
+  if(fc.list.length === 0){
+    document.getElementById('fcActions').innerHTML = '';
+    document.getElementById('fcComplete').hidden = false;
+    document.getElementById('fcComplete').innerHTML =
+      '<div class="fc-complete-title">当前范围没有可练习的词</div>' +
+      '<p style="color:var(--ink-2);font-size:14px">试试切换主题，或关闭「只看生词」。</p>' +
+      '<div class="fc-complete-actions"><button class="btn btn-ink" onclick="fcRestart()">重新开始</button></div>';
+    document.getElementById('flipInner').style.visibility = 'hidden';
+    return;
+  }
+  document.getElementById('flipInner').style.visibility = 'visible';
+  const w = fcCurrent();
+  const isW2M = fcState.dir === 'w2m';
+  const front = isW2M ? w.w : w.m;
+  const back = isW2M ? w.m : w.w;
+  const hint = isW2M ? '点卡片翻面看释义' : '点卡片翻面看成语';
+  const label = isW2M ? '释义' : '成语';
+  document.getElementById('fcFront').innerHTML =
+    '<div class="fc-top"><span class="chip">' + esc(groupNameOf(w)) + '</span><span class="fc-num">' + (fc.idx+1) + ' / ' + fc.list.length + '</span></div>' +
+    '<div class="fc-mid">' + (isW2M ? '<div class="fc-word">' + esc(front) + '</div>' : '<div class="fc-mean">' + meanHtml(front) + '</div>') + '</div>' +
+    '<div class="fc-hint">' + hint + '</div>';
+  document.getElementById('fcBack').innerHTML =
+    '<div class="fc-top"><span class="fc-label' + (isW2M ? '' : ' blue') + '">' + label + '</span><span class="fc-num">' + (fc.idx+1) + ' / ' + fc.list.length + '</span></div>' +
+    '<div class="fc-mid">' + (isW2M ? '<div class="fc-mean">' + meanHtml(back) + '</div>' : '<div class="fc-word">' + esc(back) + '</div>') + '</div>' +
+    '<div class="fc-group">' + esc(groupNameOf(w)) + '</div>';
+  fc.flipped = false;
+  const inner = document.getElementById('flipInner');
+  inner.classList.remove('flipped');
+  document.getElementById('fcActions').innerHTML =
+    '<button class="btn btn-ghost" onclick="fcPrev()">上一张</button>' +
+    '<button class="btn btn-red" onclick="fcAssess(\'unknown\')">不认识</button>' +
+    '<button class="btn btn-green" onclick="fcAssess(\'known\')">认识</button>' +
+    '<button class="btn btn-ghost" onclick="fcSkip()">跳过</button>';
+  document.getElementById('fcComplete').hidden = true;
+}
+function fcRestart(){
+  fc.list = fcBuildList();
+  fc.idx = 0;
+  fc.done = false;
+  fcRender();
+}
+function fcFlip(){
+  const inner = document.getElementById('flipInner');
+  if(fc.done || fc.list.length === 0) return;
+  fc.flipped = !fc.flipped;
+  inner.classList.toggle('flipped', fc.flipped);
+}
+function fcPrev(){
+  if(fc.idx > 0){ fc.idx--; fcRender(); }
+}
+function fcNext(){
+  if(fc.idx >= fc.list.length - 1){ fcDone(); }
+  else{ fc.idx++; fcRender(); }
+}
+function fcSkip(){ fcNext(); }
+function fcAssess(k){
+  const w = fcCurrent();
+  store.status[w.id] = k;
+  store.flashDone++;
+  store.lastAt = todayStr();
+  saveStore();
+  fcNext();
+}
+function fcDone(){
+  fc.done = true;
+  let known = 0, unknown = 0;
+  fc.list.forEach(function(w){
+    const s = statusOf(w.id);
+    if(s === 'known') known++;
+    else if(s === 'unknown') unknown++;
+  });
+  document.getElementById('fcActions').innerHTML = '';
+  document.getElementById('fcComplete').hidden = false;
+  document.getElementById('fcComplete').innerHTML =
+    '<div class="fc-complete-title">本轮完成</div>' +
+    '<p style="color:var(--ink-2);font-size:14px">共 ' + fc.list.length + ' 个词</p>' +
+    '<div class="fc-complete-stats">' +
+      '<div class="fc-stat g"><b>' + known + '</b><span>认识</span></div>' +
+      '<div class="fc-stat r"><b>' + unknown + '</b><span>生词</span></div>' +
+    '</div>' +
+    '<div class="fc-complete-actions">' +
+      (unknown > 0 ? '<button class="btn btn-red" onclick="fcRetryUnknown()">重练不认识</button>' : '') +
+      '<button class="btn btn-ink" onclick="fcRestart()">再来一轮</button>' +
+      '<a class="btn" href="#/review">去错题本</a>' +
+    '</div>';
+}
+function fcRetryUnknown(){
+  fc.list = fc.list.filter(function(w){ return statusOf(w.id) === 'unknown'; });
+  fc.idx = 0; fc.done = false;
+  fcRender();
+}
+function mountFlash(){
+  const ids = route.param.ids;
+  if(!ids){
+    const g = document.getElementById('fcGroup');
+    g.addEventListener('change', function(){ fcState.group = parseInt(g.value); fcRestart(); });
+    document.querySelectorAll('#fcDir .seg-btn').forEach(function(b){
+      b.addEventListener('click', function(){
+        fcState.dir = b.dataset.dir;
+        document.querySelectorAll('#fcDir .seg-btn').forEach(function(x){ x.classList.toggle('active', x === b); });
+        fcRestart();
+      });
+    });
+    const sh = document.getElementById('fcShuffle');
+    sh.addEventListener('change', function(){ fcState.shuffle = sh.checked; fcRestart(); });
+    const ou = document.getElementById('fcOnlyU');
+    ou.addEventListener('change', function(){ fcState.onlyUnknown = ou.checked; fcRestart(); });
+  }
+  document.getElementById('fcRestart').addEventListener('click', fcRestart);
+  document.getElementById('flipInner').addEventListener('click', fcFlip);
+  document.removeEventListener('keydown', fcKey);
+  document.addEventListener('keydown', fcKey);
+  fcRestart();
+}
+function fcKey(e){
+  if(route.name !== 'flash') return;
+  if(document.querySelector('#fcComplete:not([hidden])')) return;
+  if(e.code === 'Space' || e.key === ' '){ e.preventDefault(); fcFlip(); }
+  else if(e.key === 'ArrowLeft'){ fcPrev(); }
+  else if(e.key === 'ArrowRight'){ fcSkip(); }
+}
+
+/* ============ 测验状态 ============ */
+const qzState = { mode:'w2m', group:-1, n:10 };
+let qz = { items:[], idx:0, right:0, answered:false, wrong:[], done:false };
+
+function qzBuild(){
+  let pool = filterGroup(WORDS.slice(), qzState.group);
+  pool = shuffle(pool);
+  const n = qzState.n === 'all' ? pool.length : Math.min(qzState.n, pool.length);
+  qz.items = pool.slice(0, n);
+  qz.idx = 0; qz.right = 0; qz.wrong = []; qz.answered = false; qz.done = false;
+}
+function qzKeyOf(w, mode){ return mode === 'w2m' ? w.m : w.w; }
+function qzDistractors(w){
+  const isW2M = qzState.mode === 'w2m';
+  const target = qzKeyOf(w, qzState.mode);
+  const used = {}; used[target] = true;
+  const out = [];
+  const same = shuffle(WORDS.filter(function(x){ return x.g === w.g && x.id !== w.id; }));
+  for(let i = 0; i < same.length && out.length < 3; i++){
+    const v = qzKeyOf(same[i], qzState.mode);
+    if(!used[v]){ used[v] = true; out.push(v); }
+  }
+  if(out.length < 3){
+    const others = shuffle(WORDS.filter(function(x){ return x.g !== w.g; }));
+    for(let i = 0; i < others.length && out.length < 3; i++){
+      const v = qzKeyOf(others[i], qzState.mode);
+      if(!used[v]){ used[v] = true; out.push(v); }
+    }
+  }
+  return out;
+}
+function qzQuestion(){
+  const w = qz.items[qz.idx];
+  const isW2M = qzState.mode === 'w2m';
+  const stem = isW2M ? w.w : w.m;
+  const correct = isW2M ? w.m : w.w;
+  const opts = shuffle([
+    { t: correct, ok: true },
+    qzDistractors(w).map(function(t){ return { t: t, ok: false }; })
+  ].flat());
+  return { w: w, stem: stem, opts: opts, isW2M: isW2M };
+}
+function qzRender(){
+  const q = qzQuestion();
+  const prog = document.getElementById('quizProgress');
+  const pct = qz.items.length ? Math.round(qz.idx / qz.items.length * 100) : 0;
+  prog.innerHTML = '<span>第 ' + (qz.idx + 1) + ' / ' + qz.items.length + ' 题</span>' +
+    '<div class="progress-track"><div class="progress-fill" style="width:' + pct + '%"></div></div>' +
+    '<span>已对 <b>' + qz.right + '</b> 题</span>';
+  const label = q.isW2M ? '成语' : '释义';
+  const stemHtml = q.isW2M ? '<div class="quiz-word">' + esc(q.stem) + '</div>' : '<div class="quiz-word">' + meanHtml(q.stem) + '</div>';
+  document.getElementById('quizStem').innerHTML =
+    '<div class="quiz-label">' + (q.isW2M ? '选出与「' + label + '」意思相符的一项' : '选出与「' + label + '」对应的' + (q.isW2M?'成语':'') ) + '</div>' +
+    stemHtml;
+  const letters = ['A','B','C','D'];
+  document.getElementById('quizOptions').innerHTML = q.opts.map(function(o, i){
+    return '<button class="quiz-opt" data-ok="' + (o.ok ? 1 : 0) + '">' +
+      '<span class="q-let">' + letters[i] + '</span>' +
+      '<span class="q-txt">' + meanHtml(o.t) + '</span></button>';
+  }).join('');
+  document.getElementById('quizFooter').innerHTML =
+    '<span class="quiz-score">正确率 <b>' + (qz.idx ? Math.round(qz.right / qz.idx * 100) : 0) + '%</b></span>' +
+    '<button class="btn" id="quizNextBtn" disabled>下一题</button>';
+  document.getElementById('quizNextBtn').addEventListener('click', qzNext);
+}
+function qzAnswer(optEl){
+  if(qz.answered || qz.done) return;
+  qz.answered = true;
+  const ok = optEl.dataset.ok === '1';
+  const w = qz.items[qz.idx];
+  const isW2M = qzState.mode === 'w2m';
+  document.querySelectorAll('#quizOptions .quiz-opt').forEach(function(o){
+    o.classList.add('disabled');
+    if(o.dataset.ok === '1') o.classList.add('correct');
+  });
+  if(!ok){
+    optEl.classList.add('wrong');
+    qz.wrong.push(w.id);
+    if(store.wrong.indexOf(w.id) < 0) store.wrong.push(w.id);
+  }else{
+    qz.right++;
+  }
+  store.quizN++;
+  store.quizRight += ok ? 1 : 0;
+  store.lastAt = todayStr();
+  saveStore();
+  const btn = document.getElementById('quizNextBtn');
+  btn.disabled = false;
+  btn.textContent = qz.idx >= qz.items.length - 1 ? '查看结果' : '下一题';
+}
+function qzNext(){
+  if(!qz.answered) return;
+  if(qz.idx >= qz.items.length - 1){ qzDone(); }
+  else{ qz.idx++; qz.answered = false; qzRender(); }
+}
+function qzDone(){
+  qz.done = true;
+  const total = qz.items.length;
+  const acc = total ? Math.round(qz.right / total * 100) : 0;
+  const wrongList = qz.wrong.map(function(id){ return WORDS[id]; });
+  let wrongHtml = '';
+  if(wrongList.length){
+    wrongHtml = '<div class="qr-wrong"><h4>本次错题（' + wrongList.length + '）</h4>' +
+      wrongList.map(function(w){
+        return '<div class="qr-w-item"><b>' + esc(w.w) + '</b><span>' + esc(w.m) + '</span></div>';
+      }).join('') + '</div>';
+  }
+  document.getElementById('quizStage').innerHTML =
+    '<div class="card quiz-result">' +
+      '<div class="qr-title">练习完成</div>' +
+      '<div class="qr-score">' + qz.right + ' / ' + total + '</div>' +
+      '<div class="qr-sub">正确率 ' + acc + '%</div>' +
+      wrongHtml +
+      '<div class="qr-actions">' +
+        (wrongList.length ? '<button class="btn btn-red" onclick="qzRetryWrong()">重练错题</button>' : '') +
+        '<button class="btn btn-ink" onclick="qzStart()">再来一组</button>' +
+        '<a class="btn" href="#/review">去错题本</a>' +
+      '</div>' +
+    '</div>';
+}
+function qzRetryWrong(){
+  const ids = qz.wrong.slice();
+  if(!ids.length) return;
+  location.hash = '#/flash?ids=' + ids.join(',');
+}
+function qzStart(){
+  qzBuild();
+  const stage = document.getElementById('quizStage');
+  stage.innerHTML =
+    '<div class="quiz-progress" id="quizProgress"></div>' +
+    '<div class="card quiz-stem" id="quizStem"></div>' +
+    '<div class="quiz-options" id="quizOptions"></div>' +
+    '<div class="quiz-footer" id="quizFooter"></div>';
+  document.getElementById('quizOptions').addEventListener('click', function(e){
+    const opt = e.target.closest('.quiz-opt');
+    if(opt) qzAnswer(opt);
+  });
+  qzRender();
+}
+function mountQuiz(){
+  const g = document.getElementById('qzGroup');
+  g.addEventListener('change', function(){ qzState.group = parseInt(g.value); });
+  document.querySelectorAll('#qzDir .seg-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      qzState.mode = b.dataset.dir;
+      document.querySelectorAll('#qzDir .seg-btn').forEach(function(x){ x.classList.toggle('active', x === b); });
+    });
+  });
+  const n = document.getElementById('qzN');
+  n.addEventListener('change', function(){ qzState.n = n.value === 'all' ? 'all' : parseInt(n.value); });
+  document.getElementById('qzStart').addEventListener('click', qzStart);
+  qzBuild();
+  qzStart();
+}
+
+/* ============ 词库浏览 ============ */
+function bzStatusDot(id){
+  const s = statusOf(id);
+  return '<span class="bz-dot ' + (s === 'known' ? 'known' : (s === 'unknown' ? 'unknown' : '')) + '"></span>';
+}
+function viewBrowse(){
+  return '<div class="view-head"><h2 class="view-title">词库浏览</h2><p class="view-sub">按主题查看全部词语，掌握情况一目了然</p></div>' +
+    '<div class="toolbar">' +
+      '<input class="input" id="bzSearch" placeholder="搜索成语或释义…" style="min-width:180px">' +
+      '<select id="bzGroup" class="select">' + groupOptions(-1) + '</select>' +
+      '<span class="bz-count" id="bzCount"></span>' +
+    '</div>' +
+    '<div class="bz-groups" id="bzGroups"></div>';
+}
+function mountBrowse(){
+  const s = document.getElementById('bzSearch');
+  const g = document.getElementById('bzGroup');
+  function refresh(){
+    const q = s.value.trim().toLowerCase();
+    const gsel = parseInt(g.value);
+    const groupsToShow = [];
+    GROUPS.forEach(function(gr, i){
+      if(gsel >= 0 && i !== gsel) return;
+      groupsToShow.push({ i: i, gr: gr, items: WORDS.filter(function(w){ return w.g === i; }) });
+    });
+    const total = document.getElementById('bzCount');
+    if(q){
+      let match = 0;
+      groupsToShow.forEach(function(o){
+        o.matched = o.items.filter(function(w){
+          return w.w.toLowerCase().indexOf(q) >= 0 || w.m.toLowerCase().indexOf(q) >= 0;
+        });
+        match += o.matched.length;
+      });
+      total.textContent = '匹配 ' + match + ' 词';
+      document.getElementById('bzGroups').innerHTML = groupsToShow.map(function(o){
+        if(!o.matched.length) return '';
+        return '<details class="bz-card" open>' +
+          '<summary><span class="bz-name">' + esc(o.gr.name) + '</span>' +
+          '<span class="bz-meta">匹配 ' + o.matched.length + ' 词</span>' +
+          '<span class="bz-caret" style="margin-left:auto">›</span></summary>' +
+          '<div class="bz-items">' + o.matched.map(function(w){
+            return '<div class="bz-item">' + bzStatusDot(w.id) + '<span class="bz-w">' + esc(w.w) + '</span><span class="bz-m">' + esc(w.m) + '</span></div>';
+          }).join('') + '</div></details>';
+      }).join('');
+      if(!match){
+        document.getElementById('bzGroups').innerHTML = '<div class="bz-empty">没有找到匹配「' + esc(s.value) + '」的词语</div>';
+      }
+      return;
+    }
+    let all = 0;
+    groupsToShow.forEach(function(o){
+      let known = 0;
+      o.items.forEach(function(w){ if(statusOf(w.id) === 'known') known++; });
+      o.known = known;
+      all += o.items.length;
+    });
+    total.textContent = '共 ' + all + ' 词';
+    document.getElementById('bzGroups').innerHTML = groupsToShow.map(function(o){
+      const pct = o.items.length ? Math.round(o.known / o.items.length * 100) : 0;
+      return '<details class="bz-card">' +
+        '<summary><span class="bz-name">' + esc(o.gr.name) + '</span>' +
+        '<span class="bz-meta">' + o.items.length + ' 词 · 掌握 ' + o.known + '</span>' +
+        '<span class="bz-bar"><i style="width:' + pct + '%"></i></span>' +
+        '<span class="bz-caret">›</span></summary>' +
+        '<div class="bz-items">' + o.items.map(function(w){
+          return '<div class="bz-item">' + bzStatusDot(w.id) + '<span class="bz-w">' + esc(w.w) + '</span><span class="bz-m">' + esc(w.m) + '</span></div>';
+        }).join('') + '</div></details>';
+    }).join('');
+  }
+  s.addEventListener('input', refresh);
+  g.addEventListener('change', refresh);
+  refresh();
+}
+
+/* ============ 错题本 ============ */
+let rvTab = 'all';
+function viewReview(){
+  return '<div class="view-head"><h2 class="view-title">错题本</h2><p class="view-sub">闪卡标记为「不认识」的词与测验答错的词</p></div>' +
+    '<div class="rv-tabs">' +
+      '<button class="rv-tab" data-tab="all">全部</button>' +
+      '<button class="rv-tab" data-tab="unknown">闪卡生词</button>' +
+      '<button class="rv-tab" data-tab="wrong">测验错题</button>' +
+    '</div>' +
+    '<div class="rv-toolbar">' +
+      '<button class="btn btn-green btn-sm" id="rvPractice">用这些词练习</button>' +
+      '<button class="btn btn-ghost btn-sm" id="rvClear">清空列表</button>' +
+      '<span class="rv-count" id="rvCount"></span>' +
+    '</div>' +
+    '<div class="rv-list" id="rvList"></div>';
+}
+function rvGetItems(){
+  const unk = {};
+  const wr = {};
+  WORDS.forEach(function(w){
+    if(statusOf(w.id) === 'unknown') unk[w.id] = true;
+    if(store.wrong.indexOf(w.id) >= 0) wr[w.id] = true;
+  });
+  if(rvTab === 'unknown') return WORDS.filter(function(w){ return unk[w.id]; });
+  if(rvTab === 'wrong') return WORDS.filter(function(w){ return wr[w.id]; });
+  const both = {}; Object.assign(both, unk, wr);
+  return WORDS.filter(function(w){ return both[w.id]; });
+}
+function rvRender(){
+  const items = rvGetItems();
+  document.getElementById('rvCount').textContent = items.length + ' 个词';
+  document.querySelectorAll('.rv-tab').forEach(function(t){
+    t.classList.toggle('active', t.dataset.tab === rvTab);
+  });
+  const list = document.getElementById('rvList');
+  if(!items.length){
+    list.innerHTML = '<div class="rv-empty">这里空空如也。去「闪卡练习」标记不认识的词，或在「选择测验」里练几组，错题会自动收进来。</div>';
+    return;
+  }
+  list.innerHTML = items.map(function(w){
+    return '<div class="rv-item">' +
+      '<span class="rv-w">' + esc(w.w) + '</span>' +
+      '<span class="rv-m">' + esc(w.m) + '</span>' +
+      '<span class="rv-group">' + esc(groupNameOf(w)) + '</span>' +
+      '<span class="rv-act">' +
+        '<button class="btn btn-green btn-sm" data-act="known" data-id="' + w.id + '">认识</button>' +
+        '<button class="btn btn-ghost btn-sm" data-act="remove" data-id="' + w.id + '">移除</button>' +
+      '</span>' +
+      '</div>';
+  }).join('');
+}
+function mountReview(){
+  document.querySelectorAll('.rv-tab').forEach(function(t){
+    t.addEventListener('click', function(){ rvTab = t.dataset.tab; rvRender(); });
+  });
+  document.getElementById('rvPractice').addEventListener('click', function(){
+    const ids = rvGetItems().map(function(w){ return w.id; });
+    if(!ids.length) return;
+    location.hash = '#/flash?ids=' + ids.join(',');
+  });
+  document.getElementById('rvClear').addEventListener('click', function(){
+    if(!confirm('清空错题本（仅清除本地的认识标记与错题记录）？')) return;
+    store.status = {};
+    store.wrong = [];
+    saveStore();
+    rvRender();
+  });
+  document.getElementById('rvList').addEventListener('click', function(e){
+    const b = e.target.closest('button[data-act]');
+    if(!b) return;
+    const id = Number(b.dataset.id);
+    if(b.dataset.act === 'known'){
+      store.status[id] = 'known';
+      const ix = store.wrong.indexOf(id);
+      if(ix >= 0) store.wrong.splice(ix, 1);
+      saveStore();
+    }else{
+      const ix = store.wrong.indexOf(id);
+      if(ix >= 0) store.wrong.splice(ix, 1);
+      if(store.status[id] === 'unknown') delete store.status[id];
+      saveStore();
+    }
+    rvRender();
+  });
+  rvRender();
+}
+
+/* ============ 统计 ============ */
+function viewStats(){
+  return '<div class="view-head"><h2 class="view-title">学习统计</h2><p class="view-sub">掌握进度与本机学习记录</p></div>' +
+    '<div class="st-cards" id="stCards"></div>' +
+    '<div class="st-section"><h3>掌握进度</h3><div id="stProgress"></div></div>' +
+    '<div class="st-section"><h3>练习记录</h3><div id="stRecord"></div></div>' +
+    '<div class="st-section"><h3>说明</h3><p class="st-desc">闪卡练习中点击「认识 / 不认识」会更新掌握状态；选择测验的错题会自动进入错题本。所有进度仅保存在本机浏览器中，不会上传。</p></div>' +
+    '<button class="btn btn-ghost" id="stReset" style="border:1px solid var(--line)">重置全部进度</button>';
+}
+function renderStats(){
+  const total = WORDS.length;
+  let known = 0, unknown = 0;
+  WORDS.forEach(function(w){
+    const s = statusOf(w.id);
+    if(s === 'known') known++;
+    else if(s === 'unknown') unknown++;
+  });
+  const todo = total - known - unknown;
+  const masteredPct = total ? Math.round((known + unknown) / total * 100) : 0;
+  const knownPct = total ? Math.round(known / total * 100) : 0;
+  document.getElementById('stCards').innerHTML =
+    '<div class="st-card"><div class="st-num">' + total + '</div><div class="st-label">总词数</div></div>' +
+    '<div class="st-card g"><div class="st-num">' + known + '</div><div class="st-label">已掌握</div></div>' +
+    '<div class="st-card r"><div class="st-num">' + unknown + '</div><div class="st-label">待复习</div></div>' +
+    '<div class="st-card a"><div class="st-num">' + todo + '</div><div class="st-label">未标记</div></div>';
+  document.getElementById('stProgress').innerHTML =
+    '<div class="st-row"><span class="st-row-label">已标记</span><div class="progress-track"><div class="progress-fill" style="width:' + masteredPct + '%"></div></div><span class="st-row-val">' + masteredPct + '%</span></div>' +
+    '<div class="st-row"><span class="st-row-label">已掌握</span><div class="progress-track"><div class="progress-fill" style="width:' + knownPct + '%"></div></div><span class="st-row-val">' + knownPct + '%</span></div>';
+  const quizN = store.quizN;
+  const acc = quizN ? Math.round(store.quizRight / quizN * 100) : 0;
+  const wrongN = store.wrong.length;
+  const last = store.lastAt ? store.lastAt : '暂无记录';
+  document.getElementById('stRecord').innerHTML =
+    '<div class="st-row"><span class="st-row-label">闪卡评定</span><span class="st-row-val" style="width:auto;text-align:left">' + store.flashDone + ' 次</span></div>' +
+    '<div class="st-row"><span class="st-row-label">测验答题</span><span class="st-row-val" style="width:auto;text-align:left">' + quizN + ' 题</span></div>' +
+    '<div class="st-row"><span class="st-row-label">测验正确率</span><div class="progress-track"><div class="progress-fill" style="width:' + acc + '%"></div></div><span class="st-row-val">' + acc + '%</span></div>' +
+    '<div class="st-row"><span class="st-row-label">错题数</span><span class="st-row-val" style="width:auto;text-align:left">' + wrongN + ' 个</span></div>' +
+    '<div class="st-row"><span class="st-row-label">最近练习</span><span class="st-row-val" style="width:auto;text-align:left">' + esc(last) + '</span></div>';
+}
+function mountStats(){
+  renderStats();
+  document.getElementById('stReset').addEventListener('click', function(){
+    if(!confirm('确定重置全部进度？此操作不可恢复。')) return;
+    store = defaultStore();
+    saveStore();
+    renderStats();
+  });
+}
+
+/* ============ 视图切换 ============ */
+let route = { name:'flash', param:{} };
+function render(){
+  route = parseHash();
+  document.querySelectorAll('.tab').forEach(function(t){
+    t.classList.toggle('active', t.dataset.nav === route.name);
+  });
+  const view = document.getElementById('view');
+  if(route.name === 'quiz'){
+    view.innerHTML = '<div class="view-head"><h2 class="view-title">选择测验</h2><p class="view-sub">四选一，检验记忆</p></div>' +
+      '<div class="toolbar">' +
+        '<label class="field">主题<select id="qzGroup" class="select">' + groupOptions(qzState.group) + '</select></label>' +
+        '<div class="seg" id="qzDir">' +
+          '<button class="seg-btn" data-dir="w2m">成语 → 释义</button>' +
+          '<button class="seg-btn" data-dir="m2w">释义 → 成语</button>' +
+        '</div>' +
+        '<label class="field">题量<select id="qzN" class="select">' +
+          '<option value="10">10 题</option><option value="20">20 题</option><option value="all">全部</option>' +
+        '</select></label>' +
+        '<button class="btn btn-ink" id="qzStart">开始</button>' +
+      '</div>' +
+      '<div class="quiz-stage" id="quizStage"></div>';
+    mountQuiz();
+  }else if(route.name === 'browse'){
+    view.innerHTML = viewBrowse();
+    mountBrowse();
+  }else if(route.name === 'review'){
+    view.innerHTML = viewReview();
+    mountReview();
+  }else if(route.name === 'stats'){
+    view.innerHTML = viewStats();
+    mountStats();
+  }else{
+    const ids = route.param.ids;
+    view.innerHTML = '<div class="view-head"><h2 class="view-title">闪卡练习</h2><p class="view-sub">先回想，再翻面核对释义，并自评「认识 / 不认识」</p></div>' +
+      '<div class="toolbar">' +
+        (ids ? '<span class="field-tip">正在复习错题本中的 ' + ids.split(',').length + ' 个词</span>'
+             : '<label class="field">主题<select id="fcGroup" class="select">' + groupOptions(fcState.group) + '</select></label>' +
+               '<div class="seg" id="fcDir">' +
+                 '<button class="seg-btn' + (fcState.dir === 'w2m' ? ' active' : '') + '" data-dir="w2m">成语 → 释义</button>' +
+                 '<button class="seg-btn' + (fcState.dir === 'm2w' ? ' active' : '') + '" data-dir="m2w">释义 → 成语</button>' +
+               '</div>' +
+               '<label class="check"><input type="checkbox" id="fcShuffle"' + (fcState.shuffle ? ' checked' : '') + '> 随机</label>' +
+               '<label class="check"><input type="checkbox" id="fcOnlyU"' + (fcState.onlyUnknown ? ' checked' : '') + '> 只看生词</label>') +
+        '<button class="btn" id="fcRestart">重新开始</button>' +
+      '</div>' +
+      '<div class="flash-progress" id="fcProgress"></div>' +
+      '<div class="flash-stage"><div class="flip-scene"><div class="flip-inner" id="flipInner">' +
+        '<div class="flip-face flip-front card-paper" id="fcFront"></div>' +
+        '<div class="flip-face flip-back card-paper" id="fcBack"></div>' +
+      '</div></div></div>' +
+      '<div class="flash-actions" id="fcActions"></div>' +
+      '<div class="flash-complete card" id="fcComplete" hidden></div>';
+    mountFlash();
+  }
+  window.scrollTo(0, 0);
+}
+
+render();
+</script>
+</body>
+</html>
